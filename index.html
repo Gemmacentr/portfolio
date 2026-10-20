@@ -1,0 +1,144 @@
+<!doctype html>
+<!--
+  ==========================================================================
+  PORTFOLIO · Gemma Centrone
+  Landing page de una sola página (index.html)
+
+  Estructura general:
+    1. head ........... metadatos, SEO, Open Graph, tipografías y estilos
+    2. Loader ......... pantalla de carga con contador y barra de progreso
+    3. Cursor ......... cursor personalizado (solo en dispositivos con ratón)
+    4. SiteContent .... contenedor de la web, aparece al terminar el loader
+         Header ....... logo + navegación principal
+         Main ......... contenido principal
+         Footer ....... pie de página
+
+  Metodología CSS: SUIT CSS
+    Componente ...... PascalCase            .Loader
+    Descendiente .... Componente-camelCase  .Loader-track
+    Modificador ..... Componente--camelCase .Button--primary
+    Estado .......... is-camelCase          .Loader.is-hidden
+    Utilidad ........ u-camelCase           .u-visuallyHidden
+
+  Uso de IA: la estructura base de este archivo se generó con Claude (Anthropic)
+  a partir del prompt "base HTML semántica para un portfolio de una página
+  siguiendo la rúbrica del CEI". El contenido y los ajustes son propios.
+  ==========================================================================
+-->
+<html lang="es">
+  <head>
+    <!-- ===== Metadatos básicos ===== -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gemma Centrone · Frontend Developer</title>
+    <meta
+      name="description"
+      content="Portfolio de Gemma Centrone, frontend developer en Madrid. Proyectos de diseño y desarrollo web con HTML, CSS y JavaScript."
+    />
+    <meta name="author" content="Gemma Centrone" />
+    <meta name="theme-color" content="#1e2a5a" />
+    <!-- TODO: sustituir por la URL definitiva (GitHub Pages o dominio propio) -->
+    <link rel="canonical" href="https://usuario.github.io/portfolio/" />
+
+    <!-- ===== Open Graph (cómo se ve al compartir en redes) ===== -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Gemma Centrone · Frontend Developer" />
+    <meta
+      property="og:description"
+      content="Proyectos de diseño y desarrollo web con HTML, CSS y JavaScript."
+    />
+    <meta property="og:url" content="https://usuario.github.io/portfolio/" />
+    <meta
+      property="og:image"
+      content="https://usuario.github.io/portfolio/img/og-image.jpg"
+    />
+    <meta property="og:locale" content="es_ES" />
+
+    <!-- ===== Twitter / X ===== -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Gemma Centrone · Frontend Developer" />
+    <meta
+      name="twitter:description"
+      content="Proyectos de diseño y desarrollo web con HTML, CSS y JavaScript."
+    />
+    <meta
+      name="twitter:image"
+      content="https://usuario.github.io/portfolio/img/og-image.jpg"
+    />
+
+    <!-- ===== Favicon ===== -->
+    <link rel="icon" href="img/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="img/apple-touch-icon.png" />
+
+    <!-- ===== Tipografías: preconnect ordenado + un único link a Google Fonts ===== -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600&family=Inter:wght@400;600&display=swap"
+    />
+
+    <!-- ===== Estilos propios ===== -->
+    <link rel="stylesheet" href="./css/style.css" />
+
+    <!-- ===== Scripts (defer: no bloquean el renderizado) ===== -->
+    <script src="./js/main.js" defer></script>
+  </head>
+
+  <body>
+    <!-- ===== LOADER: pantalla de carga con contador y barra de progreso ===== -->
+    <div
+      class="Loader"
+      role="progressbar"
+      aria-label="Cargando"
+      aria-valuemin="0"
+      aria-valuemax="100"
+      aria-valuenow="0"
+    >
+      <p class="Loader-count"><span class="Loader-number">0</span>%</p>
+      <div class="Loader-track">
+        <div class="Loader-bar"></div>
+      </div>
+    </div>
+
+    <!-- ===== CURSOR: fuera de SiteContent para que se vea siempre ===== -->
+    <div class="Cursor" aria-hidden="true"></div>
+
+    <!-- ===== SITE CONTENT: aparece cuando termina el loader ===== -->
+    <div class="SiteContent">
+      <!-- ===== HEADER ===== -->
+      <header class="Header">
+        <a class="Header-logo" href="#inicio" title="Volver al inicio"
+          >Gemma /</a
+        >
+        <!-- Navegación principal -->
+        <nav class="Nav" aria-label="Navegación principal">
+          <ul class="Nav-list">
+            <li><a href="#studies" data-i18n="nav.percorso">Percorso</a></li>
+            <li><a href="#skills" data-i18n="nav.stack">Stack</a></li>
+            <li><a href="#projects" data-i18n="nav.progetti">Progetti</a></li>
+            <li><a href="#passions" data-i18n="nav.passioni">Passioni</a></li>
+            <li><a href="#contacts" data-i18n="nav.contatti">Contatti</a></li>
+          </ul>
+          <div class="Nav-hamburger">
+            <button
+              class="Menu-nav"
+              aria-label="apri menu"
+              aria-expanded="false"
+            ></button>
+          </div>
+        </nav>
+      </header>
+      <!-- ===== /HEADER ===== -->
+
+      <!-- ===== MAIN ===== -->
+      <main class="Main"></main>
+      <!-- ===== /MAIN ===== -->
+
+      <!-- ===== FOOTER ===== -->
+      <footer class="Footer"></footer>
+      <!-- ===== /FOOTER ===== -->
+    </div>
+    <!-- ===== /SITE CONTENT ===== -->
+  </body>
+</html>
