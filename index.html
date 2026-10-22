@@ -132,7 +132,187 @@
       <!-- ===== /HEADER ===== -->
 
       <!-- ===== MAIN ===== -->
-      <main class="Main"></main>
+      <main class="Main">
+        <div class="Hero"></div>
+        <section class="Stack">App</section>
+        <div class="Video">
+          <video
+            class="Video-player"
+            autoplay
+            muted
+            loop
+            playsinline
+            poster="./assets/video-gemma.webp"
+          >
+            <source src="./assets/Video_Gemma.mov" type="video/mp4" />
+          </video>
+        </div>
+        <section class="About">Say</section>
+        <div class="Passions">Map</div>
+        <section
+          class="Project"
+          aria-roledescription="carrusel"
+          aria-label="Proyectos destacados"
+        >
+          <div class="Project-slide isActive">
+            <picture class="Project-picture">
+              <img
+                class="Project-img"
+                src="/assets/TERZA-IMMAGINE.webp"
+                alt="Home de la web de MAMO"
+                width="1440"
+                height="900"
+                loading="lazy"
+              />
+            </picture>
+            <a
+              class="Project-caption"
+              href="https://mamohkltd.com/"
+              title="Ver la web de MAMO (se abre en una pestaña nueva)"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span class="Project-role">Cliente · Design · Code</span>
+              <span class="Project-title">MAMO</span>
+              <span class="Project-arrow" aria-hidden="true">↗</span>
+            </a>
+          </div>
+
+          <div class="Project-slide">
+            <picture class="Project-picture">
+              <img
+                class="Project-img kikeroo"
+                src="./assets/image (2).png"
+                alt="Fotograma de la animación 3D From Noise to Music"
+                width="1440"
+                height="900"
+                loading="lazy"
+              />
+            </picture>
+            <a
+              class="Project-caption"
+              href="https://arcangelo7.github.io/maderna-animation/index.html"
+              title="Ver From Noise to Music (se abre en una pestaña nueva)"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span class="Project-role">Università di Bologna · 3D</span>
+              <span class="Project-title">Kikeroo</span>
+              <span class="Project-arrow" aria-hidden="true">↗</span>
+            </a>
+          </div>
+
+          <div class="Project-slide">
+            <picture class="Project-picture">
+              <img
+                class="Project-img"
+                src="./assets/mirabilia.jpg"
+                alt="Portada de la revista web Mirabilia"
+                width="1440"
+                height="900"
+                loading="lazy"
+              />
+            </picture>
+            <a
+              class="Project-caption"
+              href="https://mirabiliamagazine.github.io/mirabilia/"
+              title="Ver Mirabilia (se abre en una pestaña nueva)"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span class="Project-role">Rivista web</span>
+              <span class="Project-title">Mirabilia</span>
+              <span class="Project-arrow" aria-hidden="true">↗</span>
+            </a>
+          </div>
+
+          <div class="Project-controls">
+            <button
+              class="Project-button Project-button--prev"
+              type="button"
+              title="Proyecto anterior"
+              aria-label="Proyecto anterior"
+            >
+              ←
+            </button>
+            <p class="Project-counter">
+              <span class="Project-current">1</span> / 3
+            </p>
+            <button
+              class="Project-button Project-button--next"
+              type="button"
+              title="Proyecto siguiente"
+              aria-label="Proyecto siguiente"
+            >
+              →
+            </button>
+          </div>
+        </section>
+
+        <section class="Playlist">
+          <div class="Grid-img">
+            <img
+              src="./assets/playlist.png"
+              width="1440"
+              height="900"
+              loading="lazy"
+            />
+          </div>
+          <div class="Lightbox">
+            <img src="./assets/img.jpg" alt="" />
+            <button class="Lightbox-btn">Click</button>
+          </div>
+        </section>
+        <section class="Contact">
+          <a class="Contact-link" href="#contacts" title="Ir a Contactos">
+            <span class="Contact-text">Scrivimi</span>
+            <span class="Contact-wave" aria-hidden="true">
+              <svg class="Contact-svg" viewBox="0 0 192 12">
+                <path
+                  d="M0 6 Q 6 0 12 6 T 24 6 T 36 6 T 48 6 T 60 6 T 72 6 T 84 6 T 96 6 T 108 6 T 120 6 T 132 6 T 144 6 T 156 6 T 168 6 T 180 6 T 192 6"
+                />
+              </svg>
+            </span>
+          </a>
+        </section>
+      </main>
+      <div
+        class="Lightbox"
+        role="dialog"
+        aria-modal="true"
+        aria-label="Playlist de Gemma en Spotify"
+      >
+        <div class="Lightbox-box">
+          <button
+            class="Lightbox-close"
+            type="button"
+            title="Cerrar"
+            aria-label="Cerrar"
+          >
+            ✕
+          </button>
+          <iframe
+            class="Lightbox-player"
+            title="Playlist de Gemma en Spotify"
+            data-src="https://open.spotify.com/embed/playlist/5BgIAHVkJTFtrLd0W339nG?utm_source=generator&amp;theme=0"
+            allow="
+              autoplay;
+              clipboard-write;
+              encrypted-media;
+              fullscreen;
+              picture-in-picture;
+            "
+          ></iframe>
+          <a
+            class="Lightbox-link"
+            href="https://open.spotify.com/playlist/5BgIAHVkJTFtrLd0W339nG"
+            title="Abrir la playlist en Spotify (se abre en una pestaña nueva)"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Apri in Spotify →</a
+          >
+        </div>
+      </div>
       <!-- ===== /MAIN ===== -->
 
       <!-- ===== FOOTER ===== -->

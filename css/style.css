@@ -6,7 +6,7 @@
   --ink: #17150f;
   --color-light: #fff;
   --color-track: rgb(255 255 255 / 30%);
-
+  --color-overlay: rgb(23 21 15 / 85%);
   --font-display: "Cormorant Garamond", serif;
   --font-body: "Inter", sans-serif;
 
@@ -315,4 +315,240 @@ body {
   top: 50%;
   background: #fff;
   transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.Main {
+  width: 70%;
+  margin: 2rem auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 10rem;
+  gap: 0.5rem;
+}
+
+.Hero {
+  background-image: url("../assets/img_Gemma.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  grid-column: 1/3;
+  grid-row: 1/ 3;
+  background-position: 50% 24%;
+}
+
+.Stack {
+  background-color: orange;
+  grid-column: 3/4;
+  grid-row: 1/2;
+}
+.Video {
+  grid-row: 1/2;
+  grid-column: 4/5;
+  overflow: hidden;
+}
+
+.Video-player {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.About {
+  background-color: purple;
+  grid-row: 2/3;
+  grid-column: 3/5;
+}
+.Passions {
+  background-color: brown;
+  grid-column: 1/3;
+  grid-row: 3/4;
+}
+.Project {
+  color: var(--color-light);
+  background-color: black;
+  grid-column: 3/5;
+  grid-row: 3/5;
+  overflow: hidden;
+  position: relative;
+}
+
+.Project-slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity 0.6s ease,
+    visibility 0.6s ease;
+}
+.Project-slide.isActive {
+  opacity: 1;
+  visibility: visible;
+}
+.Project-picture,
+.Project-img {
+  height: 100%;
+}
+.Project-img {
+  transition: transform 0.6s ease;
+}
+.Project-img.kikeroo {
+  object-position: 10%;
+}
+.Project-slide:hover .Project-img {
+  transform: scale(1.03);
+}
+.Project-caption {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 4rem 1.25rem 5rem;
+  background: linear-gradient(transparent, var(--color-overlay));
+}
+.Project-role {
+  font-size: 0.875rem;
+}
+.Project-title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  line-height: 1;
+}
+.Project-arrow {
+  position: absolute;
+  right: 1.25rem;
+  bottom: 5rem;
+  font-size: 2rem;
+  transition: transform 0.3s ease;
+}
+.Project-caption:hover .Project-arrow {
+  transform: rotate(45deg);
+}
+.Project-controls {
+  position: absolute;
+  right: 1.25rem;
+  bottom: 1.25rem;
+  left: 1.25rem;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.Project-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border: 1px solid var(--color-light);
+  border-radius: 50%;
+  transition:
+    color 0.2s ease,
+    background-color 0.2s ease;
+}
+.Project-button:hover {
+  color: var(--ink);
+  background-color: var(--color-light);
+}
+.Project-counter {
+  font-size: 0.875rem;
+}
+.Playlist {
+  grid-column: 1/2;
+  grid-row: 4/5;
+  min-height: 0; /* la cella non si allarga per il contenuto */
+  overflow: hidden; /* niente sborda, neanche durante la rotazione */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.Playlist-title {
+  line-height: 1;
+}
+
+.Playlist .Grid-img {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Playlist img {
+  height: 100%;
+  width: auto;
+  max-width: 90%;
+
+  object-fit: contain;
+  animation: spin 3s linear infinite;
+}
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.Grid-img:hover img {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+.Lightbox {
+  display: none;
+
+  position: fixed;
+  inset: 0;
+  background: rgba(131, 129, 129, 0.8);
+  justify-content: center;
+  align-items: center;
+}
+
+.Lightbox.isVisible {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.Lightbox img {
+  width: 600px;
+  max-width: 90%;
+  border-radius: 2rem;
+}
+
+.Contact {
+  background-color: blue;
+  grid-column: 2/3;
+  grid-row: 4/5;
+}
+
+@media (max-width: 740px) {
+  .Main {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-auto-rows: 9rem;
+    gap: 0.75rem;
+    width: 90%;
+  }
+
+  .Hero,
+  .Project {
+    grid-column: span 2;
+    grid-row: span 3;
+  }
+  .About,
+  .Passions {
+    grid-column: span 2;
+    grid-row: span 1;
+  }
+  .Stack,
+  .Video,
+  .Playlist,
+  .Contact {
+    grid-column: span 1;
+    grid-row: span 1;
+  }
 }

@@ -88,3 +88,53 @@ buttonNav.addEventListener("click", () => {
   navigationHeader.classList.toggle("isOpen");
   headerLogo.classList.toggle("isOpen");
 });
+
+const projectSlide = document.querySelectorAll(".Project-slide");
+const projectPrev = document.querySelector(".Project-button--prev");
+const projectNext = document.querySelector(".Project-button--next");
+const currentSlide = document.querySelector(".Project-current");
+
+let currentIndex = 0;
+
+const showSlide = (index) => {
+  currentIndex = (index + projectSlide.length) % projectSlide.length;
+
+  projectSlide.forEach((slide, i) => {
+    slide.classList.toggle("isActive", i === currentIndex);
+  });
+
+  currentSlide.textContent = currentIndex + 1;
+};
+const nextSlideHandler = () => showSlide(currentIndex + 1);
+const prevSlideHandler = () => showSlide(currentIndex - 1);
+
+projectNext.addEventListener("click", nextSlideHandler);
+projectPrev.addEventListener("click", prevSlideHandler);
+
+const playlistOpen = document.querySelector(".Playlist-open");
+const lightbox = document.querySelector(".Lightbox");
+const lightboxClose = document.querySelector(".Lightbox-close");
+const lightboxPlayer = document.querySelector(".Lightbox-player");
+
+const openLightboxHandler = () => {
+  !lightboxPlayer.src && (lightboxPlayer.src = lightboxPlayer.dataset.src);
+  lightbox.classList.add("isVisible");
+  lightboxClose.focus();
+};
+const closeLightboxHandler = () => {
+  lightbox.classList.remove("isVisible");
+  playlistOpen.focus();
+};
+const backdropClickHandler = (e) => {
+  e.target === lightbox && closeLightboxHandler();
+};
+const escapeKeyHandler = (e) => {
+  e.key === "Escape" &&
+    lightbox.classList.contains("isVisible") &&
+    closeLightboxHandler();
+};
+
+playlistOpen.addEventListener("click", openLightboxHandler);
+lightboxClose.addEventListener("click", closeLightboxHandler);
+lightbox.addEventListener("click", backdropClickHandler);
+document.addEventListener("keydown", escapeKeyHandler);
