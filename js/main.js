@@ -44,6 +44,13 @@ const revealSite = () => {
   document.body.style.overflow = "auto";
 };
 
+// Si el Loader ya se vio, lo oculta al instante, sin transición
+const skipLoader = () => {
+  loader.style.transition = "none";
+  siteContent.style.transition = "none";
+  revealSite();
+};
+
 // Avanza el contador y la barra un paso por frame hasta llegar a 100
 const updateLoader = () => {
   progress = Math.min(progress + loaderStep, 100);
@@ -77,7 +84,7 @@ const markLoaderSeen = () => {
 // ===== Asignaciones =====
 
 if (hasSeenLoader()) {
-  revealSite();
+  skipLoader();
 } else {
   markLoaderSeen();
   requestAnimationFrame(updateLoader);
@@ -111,30 +118,18 @@ const prevSlideHandler = () => showSlide(currentIndex - 1);
 projectNext.addEventListener("click", nextSlideHandler);
 projectPrev.addEventListener("click", prevSlideHandler);
 
-const playlistOpen = document.querySelector(".Playlist-open");
-const lightbox = document.querySelector(".Lightbox");
-const lightboxClose = document.querySelector(".Lightbox-close");
-const lightboxPlayer = document.querySelector(".Lightbox-player");
+const contenitore = document.querySelector(".Lightbox");
+const img = document.querySelector(".Grid-img");
+const player = document.querySelector(".Lightbox-player");
+const chiudi = document.querySelector(".Lightbox-btn");
 
-const openLightboxHandler = () => {
-  !lightboxPlayer.src && (lightboxPlayer.src = lightboxPlayer.dataset.src);
-  lightbox.classList.add("isVisible");
-  lightboxClose.focus();
-};
-const closeLightboxHandler = () => {
-  lightbox.classList.remove("isVisible");
-  playlistOpen.focus();
-};
-const backdropClickHandler = (e) => {
-  e.target === lightbox && closeLightboxHandler();
-};
-const escapeKeyHandler = (e) => {
-  e.key === "Escape" &&
-    lightbox.classList.contains("isVisible") &&
-    closeLightboxHandler();
-};
-
-playlistOpen.addEventListener("click", openLightboxHandler);
-lightboxClose.addEventListener("click", closeLightboxHandler);
-lightbox.addEventListener("click", backdropClickHandler);
-document.addEventListener("keydown", escapeKeyHandler);
+(img.addEventListener("click", () => {
+  !player.src && (player.src = player.dataset.src);
+  contenitore.classList.add("isVisible");
+}),
+  contenitore.addEventListener("click", (e) => {
+    e.target === contenitore && contenitore.classList.remove("isVisible");
+  }),
+  chiudi.addEventListener("click", () => {
+    contenitore.classList.remove("isVisible");
+  }));
