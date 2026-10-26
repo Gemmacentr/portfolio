@@ -95,6 +95,17 @@ buttonNav.addEventListener("click", () => {
   navigationHeader.classList.toggle("isOpen");
   headerLogo.classList.toggle("isOpen");
 });
+const navLinks = document.querySelectorAll(".Nav-list a");
+
+const closeMenuHandler = () => {
+  buttonNav.classList.remove("isOpen");
+  navigationHeader.classList.remove("isOpen");
+  headerLogo.classList.remove("isOpen");
+};
+
+navLinks.forEach((link) => {
+  link.addEventListener("click", closeMenuHandler);
+});
 
 const projectSlide = document.querySelectorAll(".Project-slide");
 const projectPrev = document.querySelector(".Project-button--prev");
