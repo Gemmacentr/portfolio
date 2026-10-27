@@ -24,7 +24,6 @@ const buttonNav = document.querySelector(".Menu-nav");
 const navigationHeader = document.querySelector(".Nav-list");
 const headerLogo = document.querySelector(".Header-logo");
 // ===== Variables =====
-let progress = 0;
 
 // ===== Funciones =====
 
@@ -52,6 +51,7 @@ const skipLoader = () => {
 };
 
 // Avanza el contador y la barra un paso por frame hasta llegar a 100
+let progress = 0;
 const updateLoader = () => {
   progress = Math.min(progress + loaderStep, 100);
   loaderNumber.textContent = progress;
@@ -201,8 +201,9 @@ const revealSections = document.querySelectorAll(".u-reveal");
 const revealHandler = () => {
   revealSections.forEach((section) => {
     const top = section.getBoundingClientRect().top;
+    const bottom = section.getBoundingClientRect().bottom;
 
-    if (top < window.innerHeight - 100) {
+    if (top < window.innerHeight - 100 && bottom > 100) {
       section.classList.add("isVisible");
     } else {
       section.classList.remove("isVisible");
