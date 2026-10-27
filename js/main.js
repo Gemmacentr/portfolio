@@ -144,3 +144,71 @@ const chiudi = document.querySelector(".Lightbox-btn");
   chiudi.addEventListener("click", () => {
     contenitore.classList.remove("isVisible");
   }));
+
+const cards = document.querySelectorAll(".ProjectCard");
+const groups = document.querySelectorAll(".ProjectGrid-group");
+const buttons = document.querySelectorAll(".Filters-button");
+
+function filterProjects(filter) {
+  // Mostra o nasconde le card
+  cards.forEach(function (card) {
+    let categories = card.dataset.cats.split(" ");
+
+    if (filter === "all" || categories.includes(filter)) {
+      card.hidden = false;
+    } else {
+      card.hidden = true;
+    }
+  });
+
+  // Aggiorna i pulsanti
+  buttons.forEach(function (button) {
+    if (button.dataset.filter === filter) {
+      button.setAttribute("aria-pressed", "true");
+    } else {
+      button.setAttribute("aria-pressed", "false");
+    }
+  });
+
+  // Nasconde i gruppi vuoti
+  groups.forEach(function (group) {
+    let groupName = group.dataset.groupLabel;
+    let visible = false;
+
+    cards.forEach(function (card) {
+      if (card.dataset.group === groupName && !card.hidden) {
+        visible = true;
+      }
+    });
+
+    if (visible) {
+      group.hidden = false;
+    } else {
+      group.hidden = true;
+    }
+  });
+}
+
+// Quando clicco su un pulsante, filtro i progetti
+buttons.forEach(function (button) {
+  button.addEventListener("click", function () {
+    let filter = button.dataset.filter;
+    filterProjects(filter);
+  });
+});
+const revealSections = document.querySelectorAll(".u-reveal");
+
+const revealHandler = () => {
+  revealSections.forEach((section) => {
+    const top = section.getBoundingClientRect().top;
+
+    if (top < window.innerHeight - 100) {
+      section.classList.add("isVisible");
+    } else {
+      section.classList.remove("isVisible");
+    }
+  });
+};
+
+window.addEventListener("scroll", revealHandler);
+revealHandler();

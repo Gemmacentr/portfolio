@@ -1283,3 +1283,30 @@ h3 {
   object-fit: cover;
   scroll-snap-align: start;
 }
+
+.u-reveal {
+  opacity: 0;
+}
+.u-reveal.isVisible {
+  animation: slideUp 0.8s ease both;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(3rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .u-reveal {
+    opacity: 1;
+  }
+  .u-reveal.isVisible {
+    animation: none;
+  }
+}
