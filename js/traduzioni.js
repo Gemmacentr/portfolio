@@ -13,7 +13,7 @@
       "hero.role":
         "Scrivo frontend da 5 anni — Vue 3, TypeScript, SCSS, Git — ma quello che mi fa venire voglia di alzarmi al mattino è il lavoro in team e le sfide nuove: il codice è il mezzo, le persone e i problemi da risolvere insieme sono il motivo.",
       "hero.scroll": "Scorri ↓",
-      "divider.percorso": "→ Percorso",
+      "divider.percorso": "Percorso",
       "project.view": "Vedi il progetto",
       "contact.heading": "Parliamo del tuo prossimo progetto.",
       "contact.email_btn": "Scrivimi via email",
@@ -95,6 +95,24 @@
       "role.mamo": "Cliente · Design · Code",
       "role.maderna": "Università di Bologna · 3D",
       "role.mirabilia": "Rivista web",
+      "nav.about": "Chi sono",
+      "story.intro1": "Ho studiato comunicazione a Siena.",
+      "story.intro2":
+        "Poi, a Bologna, ho scoperto che anche il codice può essere un modo di comunicare.",
+      "story.t1": "Comunicare",
+      "story.p1": "Laurea in Comunicazione e master in Digital Humanities.",
+      "story.t2": "Progettare",
+      "story.p2":
+        "Figma, InDesign e impaginazione: prima il disegno, poi il codice.",
+      "story.t3": "Sviluppare",
+      "story.p3": "Frontend developer dal 2022, oggi con Vue 3 e TypeScript.",
+      "about.kicker": "Frontend developer · Vue 3",
+      "about.title": "Ciao, sono Gemma.",
+      "about.text":
+        "Dalla comunicazione al codice: il mio obiettivo rimane comunicare.",
+      "badge.published": "Pubblicato",
+      "note.book": "Progetto grafico, copertina e impaginazione del libro.",
+      "link.book": "Vedi il libro ↗",
     },
     en: {
       "nav.percorso": "Journey",
@@ -107,7 +125,7 @@
       "hero.role":
         "I've been writing frontend code for 5 years — Vue 3, TypeScript, SCSS, Git — but what actually gets me up in the morning is working in a team and tackling new challenges: code is the means, people and problems worth solving together are the reason.",
       "hero.scroll": "Scroll ↓",
-      "divider.percorso": "→ Journey",
+      "divider.percorso": "Journey",
       "project.view": "View project",
       "contact.heading": "Let's talk about your next project.",
       "contact.email_btn": "Email me",
@@ -189,6 +207,25 @@
       "role.mamo": "Client · Design · Code",
       "role.maderna": "University of Bologna · 3D",
       "role.mirabilia": "Web magazine",
+      "nav.about": "About",
+      "story.intro1": "I studied communication in Siena.",
+      "story.intro2":
+        "Then, in Bologna, I discovered that code can also be a way to communicate.",
+      "story.t1": "Communicate",
+      "story.p1": "Degree in Communication and master's in Digital Humanities.",
+      "story.t2": "Design",
+      "story.p2":
+        "Figma, InDesign and layout: first the design, then the code.",
+      "story.t3": "Develop",
+      "story.p3":
+        "Frontend developer since 2022, now with Vue 3 and TypeScript.",
+      "about.kicker": "Frontend developer · Vue 3",
+      "about.title": "Hi, I'm Gemma.",
+      "about.text":
+        "From communication to code: my goal is still to communicate.",
+      "badge.published": "Published",
+      "note.book": "Graphic concept, cover and layout of the book.",
+      "link.book": "See the book ↗",
     },
     es: {
       "nav.percorso": "Trayecto",
@@ -201,7 +238,7 @@
       "hero.role":
         "Llevo 5 años escribiendo frontend — Vue 3, TypeScript, SCSS, Git — pero lo que de verdad me hace levantarme por la mañana es trabajar en equipo y afrontar retos nuevos: el código es el medio, las personas y los problemas que vale la pena resolver juntos son el motivo.",
       "hero.scroll": "Desliza ↓",
-      "divider.percorso": "→ Trayecto",
+      "divider.percorso": "Trayecto",
       "project.view": "Ver proyecto",
       "contact.heading": "Hablemos de tu próximo proyecto.",
       "contact.email_btn": "Escríbeme por email",
@@ -245,6 +282,24 @@
       "type.internship": "Prácticas",
       "master.meta": "540 h · 9 meses",
       "modules.label": "Módulos del programa",
+      "nav.about": "Sobre mí",
+      "story.intro1": "Estudié comunicación en Siena.",
+      "story.intro2":
+        "Después, en Bolonia, descubrí que el código también puede ser una forma de comunicar.",
+      "story.t1": "Comunicar",
+      "story.p1": "Grado en Comunicación y máster en Humanidades Digitales.",
+      "story.t2": "Diseñar",
+      "story.p2":
+        "Figma, InDesign y maquetación: primero el diseño, luego el código.",
+      "story.t3": "Desarrollar",
+      "story.p3": "Frontend developer desde 2022, hoy con Vue 3 y TypeScript.",
+      "about.kicker": "Frontend developer · Vue 3",
+      "about.title": "Hola, soy Gemma.",
+      "about.text":
+        "De la comunicación al código: mi objetivo sigue siendo comunicar.",
+      "badge.published": "Publicado",
+      "note.book": "Concepto gráfico, portada y maquetación del libro.",
+      "link.book": "Ver el libro ↗",
       "mod.graphic": "Diseño gráfico (Adobe Tools)",
       "mod.web": "Diseño web con HTML5, CSS3 y JavaScript",
       "mod.fullstack": "Desarrollo web Full Stack",
