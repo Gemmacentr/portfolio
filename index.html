@@ -36,9 +36,9 @@
       content="Portfolio de Gemma Centrone, frontend developer en Madrid. Proyectos de diseño y desarrollo web con HTML, CSS y JavaScript."
     />
     <meta name="author" content="Gemma Centrone" />
-    <meta name="theme-color" content="#1e2a5a" />
+    <meta name="theme-color" content="#17150f" />
     <!-- TODO: sustituir por la URL definitiva (GitHub Pages o dominio propio) -->
-    <link rel="canonical" href="https://usuario.github.io/portfolio/" />
+    <link rel="canonical" href="https:/gemmacentr.github.io" />
 
     <!-- ===== Open Graph (cómo se ve al compartir en redes) ===== -->
     <meta property="og:type" content="website" />
@@ -67,8 +67,6 @@
     />
 
     <!-- ===== Favicon ===== -->
-    <link rel="icon" href="img/favicon.svg" type="image/svg+xml" />
-    <link rel="apple-touch-icon" href="img/apple-touch-icon.png" />
 
     <!-- ===== Tipografías: preconnect ordenado + un único link a Google Fonts ===== -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -80,6 +78,12 @@
     <script src="./js/init.js"></script>
 
     <!-- ===== Estilos propios ===== -->
+    <link
+      rel="preload"
+      href="./assets/gemma-retrato.webp"
+      as="image"
+      fetchpriority="high"
+    />
     <link rel="stylesheet" href="./css/style.css" />
 
     <!-- ===== Scripts (defer: no bloquean el renderizado) ===== -->
@@ -256,10 +260,10 @@
             <picture class="Project-picture">
               <img
                 class="Project-img kikeroo"
-                src="./assets/maderna.png"
+                src="./assets/kikeroo.webp"
                 alt="Fotograma de la animación 3D From Noise to Music"
-                width="1440"
-                height="900"
+                width="1200"
+                height="291"
                 loading="lazy"
               />
             </picture>
@@ -282,10 +286,10 @@
             <picture class="Project-picture">
               <img
                 class="Project-img"
-                src="./assets/mirabilia.jpg"
+                src="./assets/mirabilia.webp"
                 alt="Portada de la revista web Mirabilia"
-                width="1440"
-                height="900"
+                width="1200"
+                height="502"
                 loading="lazy"
               />
             </picture>
@@ -347,10 +351,10 @@
             title="Abrir la playlist de Gemma"
           >
             <img
-              src="./assets/playlist.png"
+              src="./assets/playlist.webp"
               alt=""
-              width="1440"
-              height="900"
+              width="500"
+              height="500"
               loading="lazy"
             />
             <span class="Playlist-label" data-i18n="playlist.label"
