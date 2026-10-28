@@ -68,12 +68,20 @@
 
     <!-- ===== Favicon ===== -->
 
-    <!-- ===== Tipografías: preconnect ordenado + un único link a Google Fonts ===== -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- ===== Tipografías en local ===== -->
     <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600&family=Inter:wght@400;600&display=swap"
+      rel="preload"
+      href="./fonts/inter-400.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="./fonts/cormorant-garamond-600.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
     />
     <script src="./js/init.js"></script>
 
