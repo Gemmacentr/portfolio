@@ -213,3 +213,15 @@ const revealHandler = () => {
 
 window.addEventListener("scroll", revealHandler);
 revealHandler();
+
+const galleryTrack = document.querySelector(".Gallery-track");
+const galleryDots = document.querySelectorAll(".Gallery-dot");
+
+galleryDots.forEach((dot, i) => {
+  dot.addEventListener("click", () => {
+    galleryTrack.style.transform = `translateX(${i * -100}%)`;
+
+    galleryDots.forEach((d) => d.classList.remove("isActive"));
+    dot.classList.add("isActive");
+  });
+});
