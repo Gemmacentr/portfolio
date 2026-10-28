@@ -448,9 +448,7 @@ body {
 .Project-img {
   height: 100%;
 }
-.Project-img.kikeroo {
-  object-position: 10%;
-}
+
 .Project-caption {
   position: absolute;
   right: 0;
