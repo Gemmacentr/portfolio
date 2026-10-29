@@ -53,6 +53,7 @@ figure {
   max-width: 100%;
   display: block;
   width: 100%;
+  height: auto;
   object-fit: cover;
   object-position: center center;
 }
@@ -1137,7 +1138,7 @@ h3 {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
-  max-width: 75rem;
+  max-width: 50rem;
   margin: 0 auto;
   padding: 4rem 2rem;
   text-align: center;
@@ -1178,6 +1179,7 @@ h3 {
 }
 .Trek-img {
   flex: 0 0 100%;
+  height: auto;
   aspect-ratio: 5/7;
   scroll-snap-align: start;
 }
@@ -1195,6 +1197,7 @@ h3 {
 }
 .Gallery-img {
   flex: 0 0 100%;
+  height: auto;
   aspect-ratio: 5/7;
   border-radius: 1rem;
 }
