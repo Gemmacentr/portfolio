@@ -225,3 +225,7 @@ galleryDots.forEach((dot, i) => {
     dot.classList.add("isActive");
   });
 });
+
+const projectGroups = document.querySelectorAll(
+  ".ProjectGrid-group, .ProjectGrid-intro",
+);

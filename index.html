@@ -17,7 +17,7 @@
     Componente ...... PascalCase            .Loader
     Descendiente .... Componente-camelCase  .Loader-track
     Modificador ..... Componente--camelCase .Button--primary
-    Estado .......... is-camelCase          .Loader.is-hidden
+    Estado .......... isCamelCase           .Loader.isHidden
     Utilidad ........ u-camelCase           .u-visuallyHidden
 
   Uso de IA: la estructura base de este archivo se generó con Claude (Anthropic)
@@ -37,8 +37,7 @@
     />
     <meta name="author" content="Gemma Centrone" />
     <meta name="theme-color" content="#17150f" />
-    <!-- TODO: sustituir por la URL definitiva (GitHub Pages o dominio propio) -->
-    <link rel="canonical" href="https:/gemmacentr.github.io" />
+    <link rel="canonical" href="https://gemmacentr.github.io/portfolio/" />
 
     <!-- ===== Open Graph (cómo se ve al compartir en redes) ===== -->
     <meta property="og:type" content="website" />
@@ -47,10 +46,10 @@
       property="og:description"
       content="Proyectos de diseño y desarrollo web con HTML, CSS y JavaScript."
     />
-    <meta property="og:url" content="https://usuario.github.io/portfolio/" />
+    <meta property="og:url" content="https://gemmacentr.github.io/portfolio/" />
     <meta
       property="og:image"
-      content="https://usuario.github.io/portfolio/img/og-image.jpg"
+      content="https://gemmacentr.github.io/portfolio/assets/gemma-retrato.webp"
     />
     <meta property="og:locale" content="es_ES" />
 
@@ -63,10 +62,8 @@
     />
     <meta
       name="twitter:image"
-      content="https://usuario.github.io/portfolio/img/og-image.jpg"
+      content="https://gemmacentr.github.io/portfolio/assets/gemma-retrato.webp"
     />
-
-    <!-- ===== Favicon ===== -->
 
     <!-- ===== Tipografías en local ===== -->
     <link
@@ -97,6 +94,7 @@
     <!-- ===== Scripts (defer: no bloquean el renderizado) ===== -->
     <script src="./js/main.js" defer></script>
     <script src="./js/traduzioni.js" defer></script>
+    <script src="./js/sezioni.js" defer></script>
   </head>
 
   <body>
@@ -121,7 +119,7 @@
     <!-- ===== SITE CONTENT: aparece cuando termina el loader ===== -->
     <div class="SiteContent">
       <!-- ===== HEADER ===== -->
-      <header class="Header">
+      <header id="inicio" class="Header">
         <a class="Header-logo" href="#inicio" title="Volver al inicio"
           >Gemma /</a
         >
@@ -205,7 +203,7 @@
       <!-- ===== MAIN ===== -->
       <main class="Main">
         <div class="Hero"></div>
-        <section class="Contact">
+        <div class="Contact">
           <a class="Contact-link" href="#contacts" title="Ir a Contactos">
             <span class="Contact-text" data-i18n="contact.cta">Scrivimi</span>
             <span class="Contact-wave" aria-hidden="true">
@@ -216,8 +214,8 @@
               </svg>
             </span>
           </a>
-        </section>
-        <section class="Cv">
+        </div>
+        <div class="Cv">
           <a
             class="Cv-link"
             href="./assets/cv-gemma-centrone.pdf"
@@ -235,9 +233,24 @@
               height="96"
             />
           </a>
+        </div>
+        <section class="About">
+          <h1 class="About-title" data-i18n="about.title">Ciao, sono Gemma.</h1>
+          <p class="About-claim" data-i18n="about.claim">
+            L'IA scrive codice. Io so cosa farne.
+          </p>
+          <p class="About-text" data-i18n="about.text">
+            Frontend developer da 5 anni. Esperienza, visione e cura dei
+            dettagli.
+          </p>
         </section>
-        <section class="About">Say</section>
-        <div class="Passions">Map</div>
+        <div class="Passions">
+          <a class="Passions-link" href="#passions" title="Ir a Passioni">
+            <span class="Passions-text" data-i18n="passions.cta"
+              >Fuori dallo schermo ↓</span
+            >
+          </a>
+        </div>
         <section
           class="Project"
           aria-roledescription="carrusel"
@@ -274,7 +287,7 @@
               <img
                 class="Project-img"
                 src="./assets/kikeroo.webp"
-                alt="Fotograma de la animación 3D From Noise to Music"
+                alt="Home de la web de Kikeroo"
                 width="400"
                 height="291"
                 loading="lazy"
@@ -282,13 +295,13 @@
             </picture>
             <a
               class="Project-caption"
-              href="https://arcangelo7.github.io/maderna-animation/index.html"
-              title="Ver From Noise to Music (se abre en una pestaña nueva)"
+              href="https://kikeroo-three.vercel.app/home"
+              title="Ver la web de Kikeroo (se abre en una pestaña nueva)"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <span class="Project-role" data-i18n="role.maderna"
-                >Università di Bologna · 3D</span
+              <span class="Project-role" data-i18n="role.kikeroo"
+                >Prova tecnica · EJS · Leaflet</span
               >
               <span class="Project-title">Kikeroo</span>
               <span class="Project-arrow" aria-hidden="true">↗</span>
@@ -357,7 +370,7 @@
             <source src="./assets/video-gemma.mp4" type="video/mp4" />
           </video>
         </div>
-        <section class="Playlist">
+        <div class="Playlist">
           <button
             class="Grid-img"
             type="button"
@@ -410,10 +423,11 @@
               >Apri in Spotify →</a
             >
           </div>
-        </section>
+        </div>
       </main>
+      <!-- ===== /MAIN ===== -->
 
-      <!-- ===== SEZIONI ===== -->
+      <!-- ===== CHI SONO ===== -->
       <div class="Divider">
         <h2 class="Divider-text" data-i18n="nav.about">Chi sono</h2>
       </div>
@@ -451,13 +465,13 @@
           </article>
         </div>
       </section>
-      <!-- divider -->
+      <!-- ===== PERCORSO ===== -->
       <div class="Divider">
-        <div class="Divider-text" data-i18n="divider.percorso">Percorso</div>
+        <h2 class="Divider-text" data-i18n="divider.percorso">Percorso</h2>
       </div>
 
       <section id="studies" class="Section-studies u-reveal">
-        <div class="Section-head Studies">
+        <div class="Studies">
           <div class="Studies-col Studies-col--work">
             <h3 class="Studies-title" data-i18n="studies.work">
               Esperienza lavorativa
@@ -624,6 +638,7 @@
           </div>
         </div>
       </section>
+      <!-- ===== STACK ===== -->
       <section id="skills" class="Marquee" aria-label="Competenze tecniche">
         <div class="Marquee-wrapper">
           <div class="Marquee-group">
@@ -653,10 +668,38 @@
             ><span class="Marquee-sep">•</span> <span>InDesign</span
             ><span class="Marquee-sep">•</span>
           </div>
+          <div class="Marquee-group" aria-hidden="true">
+            <span class="Marquee-core">Vue 3</span
+            ><span class="Marquee-sep">•</span>
+            <span class="Marquee-core">TypeScript</span
+            ><span class="Marquee-sep">•</span>
+            <span class="Marquee-core">SCSS</span
+            ><span class="Marquee-sep">•</span>
+            <span class="Marquee-core">Git</span
+            ><span class="Marquee-sep">•</span> <span>React</span
+            ><span class="Marquee-sep">•</span> <span>JavaScript</span
+            ><span class="Marquee-sep">•</span> <span>HTML5</span
+            ><span class="Marquee-sep">•</span> <span>CSS3</span
+            ><span class="Marquee-sep">•</span> <span>PrimeVue</span
+            ><span class="Marquee-sep">•</span> <span>Tailwind</span
+            ><span class="Marquee-sep">•</span> <span>Bootstrap</span
+            ><span class="Marquee-sep">•</span> <span>Vite</span
+            ><span class="Marquee-sep">•</span> <span>Webpack</span
+            ><span class="Marquee-sep">•</span> <span>Postman</span
+            ><span class="Marquee-sep">•</span> <span>REST API</span
+            ><span class="Marquee-sep">•</span> <span>Agile</span
+            ><span class="Marquee-sep">•</span> <span>Azure DevOps</span
+            ><span class="Marquee-sep">•</span> <span>Figma</span
+            ><span class="Marquee-sep">•</span> <span>Photoshop</span
+            ><span class="Marquee-sep">•</span> <span>Illustrator</span
+            ><span class="Marquee-sep">•</span> <span>InDesign</span
+            ><span class="Marquee-sep">•</span>
+          </div>
         </div>
       </section>
-      <div class="Divider Divider--dark">
-        <div class="Divider-text" data-i18n="nav.progetti">Progetti</div>
+      <!-- ===== PROGETTI ===== -->
+      <div class="Divider">
+        <h2 class="Divider-text" data-i18n="nav.progetti">Progetti</h2>
       </div>
       <section id="projects" class="Section-projects u-reveal">
         <p class="Section-intro" data-i18n="projects.intro">
@@ -744,15 +787,26 @@
               >Vue 3 · TypeScript · SCSS · Git</small
             >
           </h3>
+          <p
+            class="ProjectGrid-intro"
+            data-group-label="vue"
+            data-i18n="group.vue.intro"
+          >
+            Creati con l'IA in 4-5 prompt. I prompt giusti vengono da tre anni
+            di Vue 3: senza di me l'IA non li avrebbe fatti, io senza l'IA sì,
+            solo in più tempo.
+          </p>
           <article class="ProjectCard" data-group="vue" data-cats="frontend">
             <div class="ProjectCard-top">
               <span class="ProjectCard-badge" data-i18n="badge.core"
                 >Stack principale</span
+              ><span class="ProjectCard-badge" data-i18n="badge.ai"
+                >IA · 4-5 prompt</span
               >
             </div>
             <h4 class="ProjectCard-title">Maria Ferrandi</h4>
             <p class="ProjectCard-note" data-i18n="note.vuesite">
-              Sito sviluppato con Vue 3, TypeScript e SCSS, versionato con Git.
+              Io ho dato direzione e controllo, l'IA ha scritto il codice.
             </p>
             <div class="ProjectCard-tags">
               <span>Vue 3</span><span>TypeScript</span><span>SCSS</span
@@ -772,11 +826,13 @@
             <div class="ProjectCard-top">
               <span class="ProjectCard-badge" data-i18n="badge.core"
                 >Stack principale</span
+              ><span class="ProjectCard-badge" data-i18n="badge.ai"
+                >IA · 4-5 prompt</span
               >
             </div>
             <h4 class="ProjectCard-title">Dagrace Creations</h4>
             <p class="ProjectCard-note" data-i18n="note.vuesite">
-              Sito sviluppato con Vue 3, TypeScript e SCSS, versionato con Git.
+              Io ho dato direzione e controllo, l'IA ha scritto il codice.
             </p>
             <div class="ProjectCard-tags">
               <span>Vue 3</span><span>TypeScript</span><span>SCSS</span
@@ -796,11 +852,13 @@
             <div class="ProjectCard-top">
               <span class="ProjectCard-badge" data-i18n="badge.core"
                 >Stack principale</span
+              ><span class="ProjectCard-badge" data-i18n="badge.ai"
+                >IA · 4-5 prompt</span
               >
             </div>
             <h4 class="ProjectCard-title">Under Lab</h4>
             <p class="ProjectCard-note" data-i18n="note.vuesite">
-              Sito sviluppato con Vue 3, TypeScript e SCSS, versionato con Git.
+              Io ho dato direzione e controllo, l'IA ha scritto il codice.
             </p>
             <div class="ProjectCard-tags">
               <span>Vue 3</span><span>TypeScript</span><span>SCSS</span
@@ -1109,10 +1167,9 @@
         </div>
       </section>
 
-      <!-- divider piccola, compatta -->
-
-      <div class="Divider Divider--sm">
-        <div class="Divider-text" data-i18n="nav.passioni">Passioni</div>
+      <!-- ===== PASSIONI ===== -->
+      <div class="Divider">
+        <h2 class="Divider-text" data-i18n="nav.passioni">Passioni</h2>
       </div>
 
       <section id="passions" class="Trek u-reveal">
@@ -1121,18 +1178,24 @@
             <div class="Gallery-track">
               <img
                 class="Gallery-img"
+                width="900"
+                height="1200"
                 src="./assets/altavia-3_1.webp"
                 alt="Panorama delle Dolomiti con nuvole sopra le cime"
                 loading="lazy"
               />
               <img
                 class="Gallery-img"
+                width="900"
+                height="1200"
                 src="./assets/altavia-1.webp"
                 alt="Lago alpino visto dall'alto tra le pareti di roccia delle Dolomiti"
                 loading="lazy"
               />
               <img
                 class="Gallery-img"
+                width="900"
+                height="1200"
                 src="./assets/altavia-2.webp"
                 alt="Cartello del sentiero a Col Gallina, 2054 metri"
                 loading="lazy"
@@ -1157,69 +1220,253 @@
             </div>
           </div>
           <h3 class="Trek-title">Alta Via 1</h3>
-          <p class="Trek-info">Dolomiti · 8 tappe</p>
+          <p class="Trek-info" data-i18n="trek.altavia">Dolomiti · 8 tappe</p>
         </article>
 
         <article class="Trek-card">
           <div class="Trek-carousel">
             <img
               class="Trek-img"
+              width="700"
+              height="990"
               src="./assets/camino-1.webp"
               alt="Copertina della rivista The idea of Santiago"
               loading="lazy"
             />
             <img
               class="Trek-img"
+              width="700"
+              height="990"
               src="./assets/camino-2.webp"
               alt="Pagina della tappa di Alvaiázere con la conchiglia gialla del Camino"
               loading="lazy"
             />
             <img
               class="Trek-img"
+              width="700"
+              height="990"
               src="./assets/camino-3.webp"
               alt="Pagina della tappa di Águeda con gli ombrelli colorati"
               loading="lazy"
             />
             <img
               class="Trek-img"
+              width="700"
+              height="990"
               src="./assets/camino-4.webp"
               alt="Impaginazione della tappa di Ponte de Lima"
               loading="lazy"
             />
             <img
               class="Trek-img"
+              width="700"
+              height="990"
               src="./assets/camino-5.webp"
               alt="Pagina della tappa di Padrón"
               loading="lazy"
             />
             <img
               class="Trek-img"
+              width="700"
+              height="990"
               src="./assets/camino-6.webp"
               alt="Titolo tipografico SANTIAGO nell'ultima pagina della rivista"
               loading="lazy"
             />
           </div>
           <h3 class="Trek-title">The idea of Santiago</h3>
-          <p class="Trek-info">Rivista · InDesign</p>
+          <p class="Trek-info" data-i18n="trek.camino">Rivista · InDesign</p>
           <a
             class="Trek-link"
             href="./assets/camino-santiago-web.pdf"
             target="_blank"
             rel="noopener noreferrer"
+            data-i18n="trek.link"
             >Sfoglia la rivista ↗</a
           >
         </article>
       </section>
 
-      <div class="Divider Divider--md">
-        <div class="Divider-text" data-i18n="nav.contatti">Contatti</div>
+      <!-- ===== CONTATTI ===== -->
+      <div class="Divider">
+        <h2 class="Divider-text" data-i18n="nav.contatti">Contatti</h2>
       </div>
 
-      <section id="contacts" class="Contacts"></section>
-      <!-- ===== /MAIN ===== -->
+      <section id="contacts" class="Contacts u-reveal">
+        <div class="Contacts-box">
+          <p class="Contacts-kicker" data-i18n="contact.heading">
+            Parliamo del tuo prossimo progetto.
+          </p>
+          <a
+            class="Contacts-email"
+            href="mailto:gemma97@live.it"
+            title="Scrivimi un'email"
+          >
+            gemma97@live.it
+          </a>
+          <svg class="Contacts-wave" viewBox="0 0 192 12" aria-hidden="true">
+            <path
+              d="M0 6 Q 6 0 12 6 T 24 6 T 36 6 T 48 6 T 60 6 T 72 6 T 84 6 T 96 6 T 108 6 T 120 6 T 132 6 T 144 6 T 156 6 T 168 6 T 180 6 T 192 6"
+            />
+          </svg>
+        </div>
+
+        <ul class="Contacts-links">
+          <li>
+            <a
+              class="Contacts-link Contacts-link--main"
+              href="mailto:gemma97@live.it"
+              data-i18n="contact.email_btn"
+              >Scrivimi via email</a
+            >
+          </li>
+          <li>
+            <a
+              class="Contacts-link"
+              href="https://github.com/Gemmacentr"
+              target="_blank"
+              rel="noopener noreferrer"
+              >GitHub ↗</a
+            >
+          </li>
+          <li>
+            <a
+              class="Contacts-link"
+              href="https://www.linkedin.com/in/gemma-centrone-831376174/"
+              target="_blank"
+              rel="noopener noreferrer"
+              >LinkedIn ↗</a
+            >
+          </li>
+          <li>
+            <a
+              class="Contacts-link"
+              href="https://www.instagram.com/ser.gemma/"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Instagram ↗</a
+            >
+          </li>
+        </ul>
+      </section>
 
       <!-- ===== FOOTER ===== -->
-      <footer class="Footer"></footer>
+      <footer class="Footer">
+        <div class="Footer-map">
+          <nav class="Footer-col" aria-label="Mapa del sitio">
+            <h2 class="Footer-title" data-i18n="footer.sections">Sezioni</h2>
+            <ul class="Footer-list">
+              <li>
+                <a class="Footer-link" href="#about" data-i18n="nav.about"
+                  >Chi sono</a
+                >
+              </li>
+              <li>
+                <a class="Footer-link" href="#studies" data-i18n="nav.percorso"
+                  >Percorso</a
+                >
+              </li>
+              <li>
+                <a class="Footer-link" href="#skills" data-i18n="nav.stack"
+                  >Stack</a
+                >
+              </li>
+              <li>
+                <a class="Footer-link" href="#projects" data-i18n="nav.progetti"
+                  >Progetti</a
+                >
+              </li>
+              <li>
+                <a class="Footer-link" href="#passions" data-i18n="nav.passioni"
+                  >Passioni</a
+                >
+              </li>
+              <li>
+                <a class="Footer-link" href="#contacts" data-i18n="nav.contatti"
+                  >Contatti</a
+                >
+              </li>
+            </ul>
+          </nav>
+
+          <div class="Footer-col">
+            <h2 class="Footer-title" data-i18n="nav.contatti">Contatti</h2>
+            <ul class="Footer-list">
+              <li>
+                <a class="Footer-link" href="mailto:gemma97@live.it">Email</a>
+              </li>
+              <li>
+                <a
+                  class="Footer-link"
+                  href="https://github.com/Gemmacentr"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >GitHub</a
+                >
+              </li>
+              <li>
+                <a
+                  class="Footer-link"
+                  href="https://www.linkedin.com/in/gemma-centrone-831376174/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >LinkedIn</a
+                >
+              </li>
+              <li>
+                <a
+                  class="Footer-link"
+                  href="https://www.instagram.com/ser.gemma/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Instagram</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div class="Footer-col">
+            <h2 class="Footer-title" data-i18n="footer.more">Risorse</h2>
+            <ul class="Footer-list">
+              <li>
+                <a
+                  class="Footer-link"
+                  href="./assets/cv-gemma-centrone.pdf"
+                  download
+                  data-i18n="cv.download"
+                  >Scarica il CV</a
+                >
+              </li>
+              <li>
+                <a
+                  class="Footer-link"
+                  href="./assets/camino-santiago-web.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  data-i18n="footer.magazine"
+                  >La rivista</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="Footer-bottom">
+          <p>© 2026 Gemma Centrone</p>
+          <p class="Footer-privacy">
+            <span data-i18n="footer.privacy1"
+              >Questo sito non usa cookie di tracciamento.</span
+            >
+            <br />
+            <span data-i18n="footer.privacy2"
+              >La playlist si carica da Spotify solo se la apri.</span
+            >
+          </p>
+          <a class="Footer-link" href="#inicio" data-i18n="footer.top"
+            >Torna su ↑</a
+          >
+        </div>
+      </footer>
       <!-- ===== /FOOTER ===== -->
     </div>
     <!-- ===== /SITE CONTENT ===== -->
