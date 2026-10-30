@@ -177,7 +177,10 @@ svg {
   display: block;
   fill: currentColor;
 }
-
+/* El sprite de iconos (svg con hidden) no ocupa espacio */
+svg[hidden] {
+  display: none;
+}
 /* ===== 4. BASE: body sin scroll hasta que termina el loader ===== */
 body {
   min-height: 100vh;
