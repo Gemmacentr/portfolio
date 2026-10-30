@@ -8,16 +8,20 @@ Portfolio personal de una sola página, creado como proyecto final del **Máster
 
 ## Sobre el proyecto
 
-Una landing page que reúne quién soy, mi trayectoria, las tecnologías que uso y los proyectos en los que he trabajado. La portada es una cuadrícula de bloques (foto, CV, vídeo, proyectos destacados, playlist y contacto) y, debajo, las secciones de experiencia, formación y stack.
+Una landing page que reúne quién soy, mi trayectoria, las tecnologías que uso y los proyectos en los que he trabajado. La portada es una cuadrícula de bloques (foto, contacto, CV, presentación, proyectos destacados, vídeo y playlist) y, debajo, las secciones Chi sono, Percorso, Stack, Progetti, Passioni y Contatti.
 
 ## Funcionalidades
 
 - **Loader** con contador y barra de progreso (solo la primera vez en cada sesión).
 - **Cursor personalizado** en dispositivos con ratón.
 - **Menú responsive**: navegación visible en escritorio y menú a pantalla completa en móvil.
-- **Traducción** del contenido en italiano, inglés y español.
+- **Traducción** del contenido en italiano, inglés y español, sin recargar la página.
 - **Slider** de proyectos destacados.
-- **Playlist de Spotify** en una lightbox, para escuchar música mientras se navega.
+- **Filtros de proyectos** por disciplina (front-end, data visualization, UI/UX, 3D y diseño).
+- **Grupos de proyectos desplegables** en móvil, para no tener que recorrer toda la lista.
+- **Galería** de fotos con puntos de navegación y **carrusel** con scroll-snap de la revista del Camino de Santiago.
+- **Aparición de las secciones** al hacer scroll, con IntersectionObserver.
+- **Playlist de Spotify** en una lightbox: el reproductor solo se carga si se abre.
 - **Descarga del CV** en PDF.
 - **Marquee** con las tecnologías que uso.
 - Respeto de `prefers-reduced-motion`: las animaciones se desactivan si el usuario lo pide.
@@ -26,8 +30,16 @@ Una landing page que reúne quién soy, mi trayectoria, las tecnologías que uso
 
 - HTML5 semántico
 - CSS3 (Grid, Flexbox, custom properties, media queries)
-- JavaScript (vanilla, sin librerías)
+- JavaScript vanilla, sin librerías
 - Metodología **SUIT CSS** para el nombre de las clases
+
+## Optimización
+
+- Imágenes en WEBP con respaldo en JPG/PNG mediante `<picture>`, con `loading="lazy"`.
+- Vídeo en WEBM y MP4 con imagen `poster`.
+- Tipografías alojadas en local (woff2) y precargadas.
+- Iconos en SVG reutilizados con `<symbol>` y `<use>`.
+- Scripts con `defer`.
 
 ## Estructura
 
@@ -37,10 +49,11 @@ portfolio/
 ├── css/
 │   └── style.css
 ├── js/
-│   ├── init.js
-│   ├── main.js
-│   └── translations.js
-└── assets/
+│   ├── init.js           (oculta el loader si ya se vio en la sesión)
+│   ├── main.js           (módulos de la web)
+│   └── translations.js   (textos en IT, EN y ES)
+├── fonts/
+└── assets/               (imágenes, vídeo y PDF)
 ```
 
 ## Cómo verlo en local
@@ -54,9 +67,8 @@ Parte del código se ha revisado y generado con Claude (Anthropic). Los archivos
 ## Créditos
 
 - Tipografías: [Cormorant Garamond](https://fonts.google.com/specimen/Cormorant+Garamond) e [Inter](https://fonts.google.com/specimen/Inter) (Google Fonts)
-- Iconos: [Icons8](https://icons8.com)
 
 ## Contacto
 
 **Gemma Centrone** · Frontend Developer
-[LinkedIn](https://es.linkedin.com/in/gemma-centrone-831376174) · [GitHub](https://github.com/Gemmacentr)
+[LinkedIn](https://www.linkedin.com/in/gemma-centrone-831376174/) · [GitHub](https://github.com/Gemmacentr)
