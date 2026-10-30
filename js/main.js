@@ -17,6 +17,9 @@
   a partir de mi código original (cursor y loader con setInterval).
   Prompt: "corrige los errores de mi main.js y adáptalo a la rúbrica del CEI
   (IIFE, handlers, requestAnimationFrame) con clases SUIT CSS".
+  Con Claude también se escribieron los grupos desplegables en móvil, la
+  pausa de la animación del menú al redimensionar y el paso del efecto de
+  scroll a IntersectionObserver, y se ordenó el archivo según la rúbrica.
   ==========================================================================
 */
 

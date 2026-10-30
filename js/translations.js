@@ -89,9 +89,6 @@
 
       "projects.intro":
         "Dal markup scritto a mano ai framework, dai dati alla grafica: front-end, data visualization, UI/UX, 3D e design. Filtra per disciplina.",
-      "stat.projects": "progetti da visitare",
-      "stat.tech": "tecnologie",
-      "stat.disc": "discipline",
       "filter.all": "Tutti",
       "filter.frontend": "Front-end",
       "filter.dataviz": "Data visualization",
@@ -103,6 +100,9 @@
         "Creati con l'IA in 4-5 prompt. I prompt giusti vengono da tre anni di Vue 3: senza di me l'IA non li avrebbe fatti, io senza l'IA sì, solo in più tempo.",
       "group.main": "Lavori e prove tecniche",
       "group.uni": "Progetti universitari",
+      "group.uni.intro":
+        "Quando l'IA non esisteva: codice scritto riga per riga, tra Bologna e il primo lavoro.",
+      "toggle.show": "Vedi i progetti",
       "badge.core": "Stack principale",
       "badge.ai": "IA · 4-5 prompt",
       "badge.hiring": "Prova per assunzione",
@@ -110,9 +110,12 @@
       "badge.uni": "Università",
       "badge.desktop": "Ottimizzato per desktop",
       "badge.mobile": "Anche mobile",
+      "badge.client": "Cliente",
       "title.design": "Design grafico",
       "note.vuesite":
         "Io ho dato direzione e controllo, l'IA ha scritto il codice.",
+      "note.mamo":
+        "Sito per M.A.MO (HK) Ltd: design, sviluppo e indicizzazione su Google.",
       "note.americandrink": "Prova per assunzione: sito in HTML e CSS.",
       "note.satnogs":
         "Prova per assunzione: Index e Home pensate come proposta per il loro sito, con il progetto su Figma.",
@@ -210,9 +213,6 @@
 
       "projects.intro":
         "From hand-written markup to frameworks, from data to graphics: front-end, data visualisation, UI/UX, 3D and design. Filter by discipline.",
-      "stat.projects": "projects to visit",
-      "stat.tech": "technologies",
-      "stat.disc": "disciplines",
       "filter.all": "All",
       "filter.frontend": "Front-end",
       "filter.dataviz": "Data visualisation",
@@ -224,6 +224,9 @@
         "Built with AI in 4-5 prompts. The right prompts come from three years of Vue 3: without me the AI couldn't have built them; without the AI I could, just more slowly.",
       "group.main": "Work and technical tests",
       "group.uni": "University projects",
+      "group.uni.intro":
+        "Before AI existed: code written line by line, between Bologna and my first job.",
+      "toggle.show": "See the projects",
       "badge.core": "Core stack",
       "badge.ai": "AI · 4-5 prompts",
       "badge.hiring": "Hiring test",
@@ -231,9 +234,12 @@
       "badge.uni": "University",
       "badge.desktop": "Desktop-optimised",
       "badge.mobile": "Mobile too",
+      "badge.client": "Client",
       "title.design": "Graphic design",
       "note.vuesite":
         "I set the direction and checked the work; the AI wrote the code.",
+      "note.mamo":
+        "Website for M.A.MO (HK) Ltd: design, development and Google indexing.",
       "note.americandrink": "Hiring test: a site built in HTML and CSS.",
       "note.satnogs":
         "Hiring test: Index and Home pages designed as a proposal for their site, with the design on Figma.",
@@ -329,9 +335,6 @@
 
       "projects.intro":
         "Del maquetado a mano a los frameworks, de los datos a la gráfica: front-end, visualización de datos, UI/UX, 3D y diseño. Filtra por disciplina.",
-      "stat.projects": "proyectos para visitar",
-      "stat.tech": "tecnologías",
-      "stat.disc": "disciplinas",
       "filter.all": "Todos",
       "filter.frontend": "Front-end",
       "filter.dataviz": "Visualización de datos",
@@ -343,6 +346,9 @@
         "Creados con IA en 4-5 prompts. Los prompts correctos vienen de tres años de Vue 3: sin mí la IA no los habría hecho; yo sin la IA sí, solo con más tiempo.",
       "group.main": "Trabajos y pruebas técnicas",
       "group.uni": "Proyectos universitarios",
+      "group.uni.intro":
+        "Cuando la IA no existía: código escrito línea a línea, entre Bolonia y mi primer trabajo.",
+      "toggle.show": "Ver los proyectos",
       "badge.core": "Stack principal",
       "badge.ai": "IA · 4-5 prompts",
       "badge.hiring": "Prueba de selección",
@@ -350,9 +356,12 @@
       "badge.uni": "Universidad",
       "badge.desktop": "Optimizado para escritorio",
       "badge.mobile": "También móvil",
+      "badge.client": "Cliente",
       "title.design": "Diseño gráfico",
       "note.vuesite":
         "Yo marqué la dirección y revisé el trabajo; la IA escribió el código.",
+      "note.mamo":
+        "Web para M.A.MO (HK) Ltd: diseño, desarrollo e indexación en Google.",
       "note.americandrink": "Prueba de selección: sitio en HTML y CSS.",
       "note.satnogs":
         "Prueba de selección: páginas Index y Home pensadas como propuesta para su sitio, con el diseño en Figma.",
