@@ -39,7 +39,7 @@ portfolio/
 ├── js/
 │   ├── init.js
 │   ├── main.js
-│   └── traduzioni.js
+│   └── translations.js
 └── assets/
 ```
 

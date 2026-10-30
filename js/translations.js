@@ -1,7 +1,30 @@
+/*
+  ==========================================================================
+  translations.js · Portfolio Gemma Centrone
+
+  Cambia el idioma de la web (IT / EN / ES) sin recargar la página.
+  Cada texto traducible lleva en el HTML un atributo data-i18n con su clave;
+  al pulsar un botón de idioma se sustituye su textContent por el texto
+  de esa clave en el diccionario.
+
+  Estructura (dentro de una IIFE):
+    1. Constantes ..... diccionario de textos y elementos del DOM
+    2. Funciones ...... cambio de idioma y handler de los botones
+    3. Asignaciones ... eventos de los botones de idioma
+
+  Nota: los textos con <br> o varias líneas usan un <span> por línea,
+  porque textContent borraría las etiquetas internas.
+  ==========================================================================
+*/
+
 "use strict";
 
 (() => {
+  // ===== 1. CONSTANTES =====
+
+  // Diccionario: un objeto por idioma con las mismas claves que data-i18n
   const translations = {
+    // --- Italiano (idioma por defecto del HTML) ---
     it: {
       "nav.about": "Chi sono",
       "nav.percorso": "Percorso",
@@ -121,6 +144,7 @@
       "footer.privacy2": "La playlist si carica da Spotify solo se la apri.",
       "footer.top": "Torna su ↑",
     },
+    // --- Inglés ---
     en: {
       "nav.about": "About",
       "nav.percorso": "Journey",
@@ -240,6 +264,7 @@
       "footer.privacy2": "The playlist loads from Spotify only if you open it.",
       "footer.top": "Back to top ↑",
     },
+    // --- Español ---
     es: {
       "nav.about": "Sobre mí",
       "nav.percorso": "Trayectoria",
@@ -360,10 +385,15 @@
     },
   };
 
+  // Botones de idioma y elementos con texto traducible
   const langButtons = document.querySelectorAll(".Lang-button");
   const textsToTranslate = document.querySelectorAll("[data-i18n]");
 
+  // ===== 2. FUNCIONES =====
+
+  // Cambia todos los textos al idioma indicado
   const changeLanguage = (lang) => {
+    // Sustituye el texto de cada elemento si su clave existe en ese idioma
     textsToTranslate.forEach((element) => {
       const key = element.dataset.i18n;
       if (translations[lang][key]) {
@@ -371,18 +401,23 @@
       }
     });
 
+    // Marca el botón del idioma activo
     langButtons.forEach((button) => {
       const isActive = button.dataset.lang === lang;
       button.classList.toggle("isActive", isActive);
       button.setAttribute("aria-pressed", isActive);
     });
 
+    // Actualiza el idioma de la página para lectores de pantalla y buscadores
     document.documentElement.lang = lang;
   };
 
+  // Cambia al idioma del botón pulsado
   const langButtonHandler = (e) => {
     changeLanguage(e.currentTarget.dataset.lang);
   };
+
+  // ===== 3. ASIGNACIONES =====
 
   langButtons.forEach((button) => {
     button.addEventListener("click", langButtonHandler);
