@@ -94,10 +94,30 @@
     <!-- ===== Scripts (defer: no bloquean el renderizado) ===== -->
     <script src="./js/main.js" defer></script>
     <script src="./js/traduzioni.js" defer></script>
-    <script src="./js/sezioni.js" defer></script>
   </head>
 
   <body>
+    <!-- ===== SVG SPRITE: iconos reutilizables con <use> ===== -->
+    <svg hidden>
+      <!-- Onda de los enlaces de contacto -->
+      <symbol id="icon-wave" viewBox="0 0 192 12">
+        <path
+          d="M0 6 Q 6 0 12 6 T 24 6 T 36 6 T 48 6 T 60 6 T 72 6 T 84 6 T 96 6 T 108 6 T 120 6 T 132 6 T 144 6 T 156 6 T 168 6 T 180 6 T 192 6"
+        />
+      </symbol>
+      <!-- Flecha de descarga del CV -->
+      <symbol id="icon-download" viewBox="0 0 24 24">
+        <path
+          d="M12 3v12M7 10l5 5 5-5M5 21h14"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      </symbol>
+    </svg>
+
     <!-- ===== LOADER: pantalla de carga con contador y barra de progreso ===== -->
     <div
       class="Loader"
@@ -124,6 +144,7 @@
           >Gemma /</a
         >
 
+        <!-- Selector de idioma (IT / EN / ES) -->
         <div class="Lang" role="group" aria-label="Idioma del sitio">
           <button
             class="Lang-button isActive"
@@ -154,6 +175,7 @@
           </button>
         </div>
 
+        <!-- Navegación principal: en móvil se abre con el botón hamburguesa -->
         <nav class="Nav" aria-label="Navegación principal">
           <ul class="Nav-list">
             <li>
@@ -201,20 +223,22 @@
       <!-- ===== /HEADER ===== -->
 
       <!-- ===== MAIN ===== -->
+      <!-- Cuadrícula bento: cada bloque es una celda del grid -->
       <main class="Main">
+        <!-- Foto de Gemma (imagen de fondo en CSS) -->
         <div class="Hero"></div>
+        <!-- Enlace a contactos con la onda animada -->
         <div class="Contact">
           <a class="Contact-link" href="#contacts" title="Ir a Contactos">
             <span class="Contact-text" data-i18n="contact.cta">Scrivimi</span>
             <span class="Contact-wave" aria-hidden="true">
               <svg class="Contact-svg" viewBox="0 0 192 12">
-                <path
-                  d="M0 6 Q 6 0 12 6 T 24 6 T 36 6 T 48 6 T 60 6 T 72 6 T 84 6 T 96 6 T 108 6 T 120 6 T 132 6 T 144 6 T 156 6 T 168 6 T 180 6 T 192 6"
-                />
+                <use href="#icon-wave" />
               </svg>
             </span>
           </a>
         </div>
+        <!-- Descarga del currículum -->
         <div class="Cv">
           <a
             class="Cv-link"
@@ -225,15 +249,12 @@
             <span class="Cv-kicker" data-i18n="cv.kicker">Curriculum</span>
 
             <span class="Cv-label" data-i18n="cv.download">Scarica il CV</span>
-            <img
-              class="Cv-icon"
-              src="./assets/icon-download.png"
-              alt=""
-              width="96"
-              height="96"
-            />
+            <svg class="Cv-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <use href="#icon-download" />
+            </svg>
           </a>
         </div>
+        <!-- Presentación: título principal de la página -->
         <section class="About">
           <h1 class="About-title" data-i18n="about.title">Ciao, sono Gemma.</h1>
           <p class="About-claim" data-i18n="about.claim">
@@ -244,6 +265,7 @@
             dettagli.
           </p>
         </section>
+        <!-- Acceso directo a la sección Passioni -->
         <div class="Passions">
           <a class="Passions-link" href="#passions" title="Ir a Passioni">
             <span class="Passions-text" data-i18n="passions.cta"
@@ -251,6 +273,7 @@
             >
           </a>
         </div>
+        <!-- Slider de proyectos destacados (3 slides + controles) -->
         <section
           class="Project"
           aria-roledescription="carrusel"
@@ -258,9 +281,10 @@
         >
           <div class="Project-slide isActive">
             <picture class="Project-picture">
+              <source srcset="./assets/mamo.webp" type="image/webp" />
               <img
                 class="Project-img"
-                src="./assets/mamo.webp"
+                src="./assets/mamo.jpg"
                 alt="Home de la web de MAMO"
                 width="1000"
                 height="510"
@@ -284,9 +308,10 @@
 
           <div class="Project-slide">
             <picture class="Project-picture">
+              <source srcset="./assets/kikeroo.webp" type="image/webp" />
               <img
                 class="Project-img"
-                src="./assets/kikeroo.webp"
+                src="./assets/kikeroo.jpg"
                 alt="Home de la web de Kikeroo"
                 width="400"
                 height="291"
@@ -310,9 +335,10 @@
 
           <div class="Project-slide">
             <picture class="Project-picture">
+              <source srcset="./assets/mirabilia.webp" type="image/webp" />
               <img
                 class="Project-img"
-                src="./assets/mirabilia.webp"
+                src="./assets/mirabilia.jpg"
                 alt="Portada de la revista web Mirabilia"
                 width="1200"
                 height="502"
@@ -334,6 +360,7 @@
             </a>
           </div>
 
+          <!-- Controles del slider: anterior, contador y siguiente -->
           <div class="Project-controls">
             <button
               class="Project-button Project-button--prev"
@@ -357,6 +384,7 @@
           </div>
         </section>
 
+        <!-- Vídeo en bucle, sin sonido -->
         <div class="Video">
           <video
             class="Video-player"
@@ -364,29 +392,35 @@
             muted
             loop
             playsinline
+            preload="none"
             poster="./assets/video-gemma-poster.webp"
           >
             <source src="./assets/video-gemma.webm" type="video/webm" />
             <source src="./assets/video-gemma.mp4" type="video/mp4" />
           </video>
         </div>
+        <!-- Playlist: el disco abre el Lightbox con Spotify -->
         <div class="Playlist">
           <button
             class="Grid-img"
             type="button"
             title="Abrir la playlist de Gemma"
           >
-            <img
-              src="./assets/playlist.webp"
-              alt=""
-              width="300"
-              height="300"
-              loading="lazy"
-            />
+            <picture class="Playlist-picture">
+              <source srcset="./assets/playlist.webp" type="image/webp" />
+              <img
+                src="./assets/playlist.png"
+                alt=""
+                width="300"
+                height="300"
+                loading="lazy"
+              />
+            </picture>
             <span class="Playlist-label" data-i18n="playlist.label"
               >Musica di sottofondo?</span
             >
           </button>
+          <!-- Lightbox: el iframe se carga solo al abrirlo (data-src) -->
           <div
             class="Lightbox"
             role="dialog"
@@ -404,6 +438,7 @@
             <iframe
               class="Lightbox-player"
               title="Playlist de Gemma en Spotify"
+              loading="lazy"
               data-src="https://open.spotify.com/embed/playlist/5BgIAHVkJTFtrLd0W339nG?utm_source=generator&amp;theme=0"
               allow="
                 autoplay;
@@ -441,6 +476,7 @@
             di comunicare.</span
           >
         </p>
+        <!-- Tres pasos del recorrido -->
         <div class="Story-steps">
           <article class="Story-step">
             <span class="Story-number">01</span>
@@ -472,6 +508,7 @@
 
       <section id="studies" class="Section-studies u-reveal">
         <div class="Studies">
+          <!-- Columna de experiencia laboral -->
           <div class="Studies-col Studies-col--work">
             <h3 class="Studies-title" data-i18n="studies.work">
               Esperienza lavorativa
@@ -578,6 +615,7 @@
               </div>
             </div>
           </div>
+          <!-- Columna de formación -->
           <div class="Studies-col Studies-col--edu">
             <h3 class="Studies-title" data-i18n="studies.edu">Formazione</h3>
             <div class="StudyItem StudyItem--live">
@@ -587,6 +625,7 @@
               </div>
               <h4>Máster Avanzado de Diseño y Desarrollo Web</h4>
               <p>CEI · Madrid</p>
+              <!-- Módulos del máster, desplegables -->
               <details class="StudyModules">
                 <summary data-i18n="modules.label">
                   Moduli del programma
@@ -640,6 +679,9 @@
       </section>
       <!-- ===== STACK ===== -->
       <section id="skills" class="Marquee" aria-label="Competenze tecniche">
+        <!-- Título solo para lectores de pantalla -->
+        <h2 class="u-visuallyHidden" data-i18n="nav.stack">Stack</h2>
+        <!-- Cinta en movimiento: el segundo grupo repite el primero para el bucle -->
         <div class="Marquee-wrapper">
           <div class="Marquee-group">
             <span class="Marquee-core">Vue 3</span
@@ -708,11 +750,13 @@
           disciplina.
         </p>
 
+        <!-- Filtros por disciplina -->
         <div class="Filters" role="group" aria-label="Filtra i progetti">
           <button
             type="button"
             class="Filters-button"
             data-filter="all"
+            title="Mostrar todos los proyectos"
             data-i18n="filter.all"
             aria-pressed="true"
           >
@@ -722,6 +766,7 @@
             type="button"
             class="Filters-button"
             data-filter="frontend"
+            title="Filtrar por Front-end"
             data-i18n="filter.frontend"
             aria-pressed="false"
           >
@@ -731,6 +776,7 @@
             type="button"
             class="Filters-button"
             data-filter="dataviz"
+            title="Filtrar por Data visualization"
             data-i18n="filter.dataviz"
             aria-pressed="false"
           >
@@ -740,6 +786,7 @@
             type="button"
             class="Filters-button"
             data-filter="uiux"
+            title="Filtrar por UI/UX"
             data-i18n="filter.uiux"
             aria-pressed="false"
           >
@@ -749,6 +796,7 @@
             type="button"
             class="Filters-button"
             data-filter="3d"
+            title="Filtrar por 3D"
             data-i18n="filter.3d"
             aria-pressed="false"
           >
@@ -758,13 +806,16 @@
             type="button"
             class="Filters-button"
             data-filter="design"
+            title="Filtrar por Design"
             data-i18n="filter.design"
             aria-pressed="false"
           >
             Design
           </button>
         </div>
+        <!-- Rejilla de proyectos: título, intro, botón móvil y tarjetas de cada grupo -->
         <div class="ProjectGrid">
+          <!-- Grupo: sitios en Vue 3 -->
           <h3
             class="ProjectGrid-group ProjectGrid-group--vue"
             data-group-label="vue"
@@ -787,6 +838,7 @@
             class="ProjectGrid-toggle"
             type="button"
             aria-expanded="false"
+            title="Mostrar los proyectos de Siti in Vue 3"
             data-group-label="vue"
             data-i18n="toggle.show"
           >
@@ -812,7 +864,8 @@
               <a
                 href="https://maria-ferrandi.netlify.app/"
                 target="_blank"
-                rel="noopener"
+                rel="noopener noreferrer"
+                title="Abrir Maria Ferrandi (se abre en una pestaña nueva)"
                 data-i18n="link.site"
                 >Apri il sito ↗</a
               >
@@ -838,7 +891,8 @@
               <a
                 href="https://dagracecreations.netlify.app/home"
                 target="_blank"
-                rel="noopener"
+                rel="noopener noreferrer"
+                title="Abrir Dagrace Creations (se abre en una pestaña nueva)"
                 data-i18n="link.site"
                 >Apri il sito ↗</a
               >
@@ -864,12 +918,14 @@
               <a
                 href="https://under-lab.com/"
                 target="_blank"
-                rel="noopener"
+                rel="noopener noreferrer"
+                title="Abrir Under Lab (se abre en una pestaña nueva)"
                 data-i18n="link.site"
                 >Apri il sito ↗</a
               >
             </div>
           </article>
+          <!-- Grupo: trabajos y pruebas técnicas -->
           <h3
             class="ProjectGrid-group ProjectGrid-group--main"
             data-group-label="main"
@@ -880,6 +936,7 @@
             class="ProjectGrid-toggle"
             type="button"
             aria-expanded="false"
+            title="Mostrar los proyectos de Lavori e prove tecniche"
             data-group-label="main"
             data-i18n="toggle.show"
           >
@@ -908,7 +965,8 @@
               <a
                 href="https://gemmacentr.github.io/MAMO/"
                 target="_blank"
-                rel="noopener"
+                rel="noopener noreferrer"
+                title="Abrir MAMO (se abre en una pestaña nueva)"
                 data-i18n="link.site"
                 >Apri il sito ↗</a
               >
@@ -931,7 +989,8 @@
               <a
                 href="https://gemmacentr.github.io/americanDrink/"
                 target="_blank"
-                rel="noopener"
+                rel="noopener noreferrer"
+                title="Abrir americanDrink (se abre en una pestaña nueva)"
                 data-i18n="link.site"
                 >Apri il sito ↗</a
               >
@@ -959,13 +1018,15 @@
               <a
                 href="https://gemmacentr.github.io/SATNOGS-Exercize/index.html"
                 target="_blank"
-                rel="noopener"
+                rel="noopener noreferrer"
+                title="Abrir SATNOGS Exercise (se abre en una pestaña nueva)"
                 data-i18n="link.site"
                 >Apri il sito ↗</a
               ><a
                 href="https://www.figma.com/design/N9pXqLlGPKgYD8kCQm6HXA/Esercizio?node-id=0-1&amp;p=f&amp;t=jcyClS0gSneke0yc-0"
                 target="_blank"
-                rel="noopener"
+                rel="noopener noreferrer"
+                title="Ver SATNOGS Exercise en Figma (se abre en una pestaña nueva)"
                 data-i18n="link.figma"
                 >Vedi su Figma ↗</a
               >
@@ -986,7 +1047,8 @@
               <a
                 href="https://react-app-ivory-beta.vercel.app/"
                 target="_blank"
-                rel="noopener"
+                rel="noopener noreferrer"
+                title="Abrir React App (se abre en una pestaña nueva)"
                 data-i18n="link.site"
                 >Apri il sito ↗</a
               >
@@ -1009,7 +1071,8 @@
               <a
                 href="https://kikeroo-three.vercel.app/home"
                 target="_blank"
-                rel="noopener"
+                rel="noopener noreferrer"
+                title="Abrir Kikeroo (se abre en una pestaña nueva)"
                 data-i18n="link.site"
                 >Apri il sito ↗</a
               >
@@ -1025,7 +1088,8 @@
               <a
                 href="https://www.figma.com/proto/exkMy524zvkKjyaXDuEIlV/Biopharm-Project?node-id=276-7077&amp;starting-point-node-id=276%3A7077&amp;t=tBfdtceimSe8kGXt-1"
                 target="_blank"
-                rel="noopener"
+                rel="noopener noreferrer"
+                title="Ver el prototipo de Biopharm Project (se abre en una pestaña nueva)"
                 data-i18n="link.prototype"
                 >Vedi il prototipo ↗</a
               >
@@ -1048,6 +1112,7 @@
               ><span>Photoshop</span>
             </div>
           </article>
+          <!-- Grupo: proyectos universitarios -->
           <h3
             class="ProjectGrid-group ProjectGrid-group--uni"
             data-group-label="uni"
@@ -1067,6 +1132,7 @@
             class="ProjectGrid-toggle"
             type="button"
             aria-expanded="false"
+            title="Mostrar los proyectos de Progetti universitari"
             data-group-label="uni"
             data-i18n="toggle.show"
           >
@@ -1095,7 +1161,8 @@
               <a
                 href="https://gemmacentr.github.io/MassacreOntology/"
                 target="_blank"
-                rel="noopener"
+                rel="noopener noreferrer"
+                title="Abrir Massacre Ontology (se abre en una pestaña nueva)"
                 data-i18n="link.site"
                 >Apri il sito ↗</a
               >
@@ -1125,7 +1192,8 @@
               <a
                 href="https://humboldtproject.github.io/Epds/index.html"
                 target="_blank"
-                rel="noopener"
+                rel="noopener noreferrer"
+                title="Abrir Humboldt Project · EPDs (se abre en una pestaña nueva)"
                 data-i18n="link.site"
                 >Apri il sito ↗</a
               >
@@ -1154,7 +1222,8 @@
               <a
                 href="https://odohteu.github.io/index.html"
                 target="_blank"
-                rel="noopener"
+                rel="noopener noreferrer"
+                title="Abrir Odohteu (se abre en una pestaña nueva)"
                 data-i18n="link.site"
                 >Apri il sito ↗</a
               >
@@ -1181,7 +1250,8 @@
               <a
                 href="https://arcangelo7.github.io/maderna-animation/index.html"
                 target="_blank"
-                rel="noopener"
+                rel="noopener noreferrer"
+                title="Abrir Maderna Animation (se abre en una pestaña nueva)"
                 data-i18n="link.site"
                 >Apri il sito ↗</a
               >
@@ -1210,7 +1280,8 @@
               <a
                 href="https://mirabiliamagazine.github.io/mirabilia/"
                 target="_blank"
-                rel="noopener"
+                rel="noopener noreferrer"
+                title="Abrir Mirabilia (se abre en una pestaña nueva)"
                 data-i18n="link.site"
                 >Apri il sito ↗</a
               >
@@ -1225,48 +1296,62 @@
       </div>
 
       <section id="passions" class="Trek u-reveal">
+        <!-- Alta Via 1: carrusel con puntos -->
         <article class="Trek-card">
           <div class="Gallery">
             <div class="Gallery-track">
-              <img
-                class="Gallery-img"
-                width="900"
-                height="1200"
-                src="./assets/altavia-3_1.webp"
-                alt="Panorama delle Dolomiti con nuvole sopra le cime"
-                loading="lazy"
-              />
-              <img
-                class="Gallery-img"
-                width="900"
-                height="1200"
-                src="./assets/altavia-1.webp"
-                alt="Lago alpino visto dall'alto tra le pareti di roccia delle Dolomiti"
-                loading="lazy"
-              />
-              <img
-                class="Gallery-img"
-                width="900"
-                height="1200"
-                src="./assets/altavia-2.webp"
-                alt="Cartello del sentiero a Col Gallina, 2054 metri"
-                loading="lazy"
-              />
+              <picture class="Gallery-picture">
+                <source srcset="./assets/altavia-3_1.webp" type="image/webp" />
+                <img
+                  class="Gallery-img"
+                  width="900"
+                  height="1200"
+                  src="./assets/altavia-3_1.jpg"
+                  alt="Panorama delle Dolomiti con nuvole sopra le cime"
+                  loading="lazy"
+                />
+              </picture>
+              <picture class="Gallery-picture">
+                <source srcset="./assets/altavia-1.webp" type="image/webp" />
+                <img
+                  class="Gallery-img"
+                  width="900"
+                  height="1200"
+                  src="./assets/altavia-1.jpg"
+                  alt="Lago alpino visto dall'alto tra le pareti di roccia delle Dolomiti"
+                  loading="lazy"
+                />
+              </picture>
+              <picture class="Gallery-picture">
+                <source srcset="./assets/altavia-2.webp" type="image/webp" />
+                <img
+                  class="Gallery-img"
+                  width="900"
+                  height="1200"
+                  src="./assets/altavia-2.jpg"
+                  alt="Cartello del sentiero a Col Gallina, 2054 metri"
+                  loading="lazy"
+                />
+              </picture>
             </div>
+            <!-- Puntos de navegación de la galería -->
             <div class="Gallery-dots">
               <button
                 class="Gallery-dot isActive"
                 type="button"
+                title="Ver foto 1"
                 aria-label="Foto 1"
               ></button>
               <button
                 class="Gallery-dot"
                 type="button"
+                title="Ver foto 2"
                 aria-label="Foto 2"
               ></button>
               <button
                 class="Gallery-dot"
                 type="button"
+                title="Ver foto 3"
                 aria-label="Foto 3"
               ></button>
             </div>
@@ -1275,56 +1360,75 @@
           <p class="Trek-info" data-i18n="trek.altavia">Dolomiti · 8 tappe</p>
         </article>
 
+        <!-- Revista del Camino: carrusel con scroll-snap -->
         <article class="Trek-card">
           <div class="Trek-carousel">
-            <img
-              class="Trek-img"
-              width="700"
-              height="990"
-              src="./assets/camino-1.webp"
-              alt="Copertina della rivista The idea of Santiago"
-              loading="lazy"
-            />
-            <img
-              class="Trek-img"
-              width="700"
-              height="990"
-              src="./assets/camino-2.webp"
-              alt="Pagina della tappa di Alvaiázere con la conchiglia gialla del Camino"
-              loading="lazy"
-            />
-            <img
-              class="Trek-img"
-              width="700"
-              height="990"
-              src="./assets/camino-3.webp"
-              alt="Pagina della tappa di Águeda con gli ombrelli colorati"
-              loading="lazy"
-            />
-            <img
-              class="Trek-img"
-              width="700"
-              height="990"
-              src="./assets/camino-4.webp"
-              alt="Impaginazione della tappa di Ponte de Lima"
-              loading="lazy"
-            />
-            <img
-              class="Trek-img"
-              width="700"
-              height="990"
-              src="./assets/camino-5.webp"
-              alt="Pagina della tappa di Padrón"
-              loading="lazy"
-            />
-            <img
-              class="Trek-img"
-              width="700"
-              height="990"
-              src="./assets/camino-6.webp"
-              alt="Titolo tipografico SANTIAGO nell'ultima pagina della rivista"
-              loading="lazy"
-            />
+            <picture class="Trek-picture">
+              <source srcset="./assets/camino-1.webp" type="image/webp" />
+              <img
+                class="Trek-img"
+                width="700"
+                height="990"
+                src="./assets/camino-1.jpg"
+                alt="Copertina della rivista The idea of Santiago"
+                loading="lazy"
+              />
+            </picture>
+            <picture class="Trek-picture">
+              <source srcset="./assets/camino-2.webp" type="image/webp" />
+              <img
+                class="Trek-img"
+                width="700"
+                height="990"
+                src="./assets/camino-2.jpg"
+                alt="Pagina della tappa di Alvaiázere con la conchiglia gialla del Camino"
+                loading="lazy"
+              />
+            </picture>
+            <picture class="Trek-picture">
+              <source srcset="./assets/camino-3.webp" type="image/webp" />
+              <img
+                class="Trek-img"
+                width="700"
+                height="990"
+                src="./assets/camino-3.jpg"
+                alt="Pagina della tappa di Águeda con gli ombrelli colorati"
+                loading="lazy"
+              />
+            </picture>
+            <picture class="Trek-picture">
+              <source srcset="./assets/camino-4.webp" type="image/webp" />
+              <img
+                class="Trek-img"
+                width="700"
+                height="990"
+                src="./assets/camino-4.jpg"
+                alt="Impaginazione della tappa di Ponte de Lima"
+                loading="lazy"
+              />
+            </picture>
+            <picture class="Trek-picture">
+              <source srcset="./assets/camino-5.webp" type="image/webp" />
+              <img
+                class="Trek-img"
+                width="700"
+                height="990"
+                src="./assets/camino-5.jpg"
+                alt="Pagina della tappa di Padrón"
+                loading="lazy"
+              />
+            </picture>
+            <picture class="Trek-picture">
+              <source srcset="./assets/camino-6.webp" type="image/webp" />
+              <img
+                class="Trek-img"
+                width="700"
+                height="990"
+                src="./assets/camino-6.jpg"
+                alt="Titolo tipografico SANTIAGO nell'ultima pagina della rivista"
+                loading="lazy"
+              />
+            </picture>
           </div>
           <h3 class="Trek-title">The idea of Santiago</h3>
           <p class="Trek-info" data-i18n="trek.camino">Rivista · InDesign</p>
@@ -1333,6 +1437,7 @@
             href="./assets/camino-santiago-web.pdf"
             target="_blank"
             rel="noopener noreferrer"
+            title="Abrir la revista en PDF (se abre en una pestaña nueva)"
             data-i18n="trek.link"
             >Sfoglia la rivista ↗</a
           >
@@ -1345,6 +1450,7 @@
       </div>
 
       <section id="contacts" class="Contacts u-reveal">
+        <!-- Email principal -->
         <div class="Contacts-box">
           <p class="Contacts-kicker" data-i18n="contact.heading">
             Parliamo del tuo prossimo progetto.
@@ -1357,17 +1463,17 @@
             gemma97@live.it
           </a>
           <svg class="Contacts-wave" viewBox="0 0 192 12" aria-hidden="true">
-            <path
-              d="M0 6 Q 6 0 12 6 T 24 6 T 36 6 T 48 6 T 60 6 T 72 6 T 84 6 T 96 6 T 108 6 T 120 6 T 132 6 T 144 6 T 156 6 T 168 6 T 180 6 T 192 6"
-            />
+            <use href="#icon-wave" />
           </svg>
         </div>
 
+        <!-- Enlaces de contacto y redes -->
         <ul class="Contacts-links">
           <li>
             <a
               class="Contacts-link Contacts-link--main"
               href="mailto:gemma97@live.it"
+              title="Escribir un email a Gemma"
               data-i18n="contact.email_btn"
               >Scrivimi via email</a
             >
@@ -1376,6 +1482,7 @@
             <a
               class="Contacts-link"
               href="https://github.com/Gemmacentr"
+              title="Ver el perfil de GitHub (se abre en una pestaña nueva)"
               target="_blank"
               rel="noopener noreferrer"
               >GitHub ↗</a
@@ -1385,6 +1492,7 @@
             <a
               class="Contacts-link"
               href="https://www.linkedin.com/in/gemma-centrone-831376174/"
+              title="Ver el perfil de LinkedIn (se abre en una pestaña nueva)"
               target="_blank"
               rel="noopener noreferrer"
               >LinkedIn ↗</a
@@ -1394,6 +1502,7 @@
             <a
               class="Contacts-link"
               href="https://www.instagram.com/ser.gemma/"
+              title="Ver el perfil de Instagram (se abre en una pestaña nueva)"
               target="_blank"
               rel="noopener noreferrer"
               >Instagram ↗</a
@@ -1404,37 +1513,62 @@
 
       <!-- ===== FOOTER ===== -->
       <footer class="Footer">
+        <!-- Mapa del sitio en tres columnas -->
         <div class="Footer-map">
           <nav class="Footer-col" aria-label="Mapa del sitio">
             <h2 class="Footer-title" data-i18n="footer.sections">Sezioni</h2>
             <ul class="Footer-list">
               <li>
-                <a class="Footer-link" href="#about" data-i18n="nav.about"
+                <a
+                  class="Footer-link"
+                  href="#about"
+                  title="Ir a Chi sono"
+                  data-i18n="nav.about"
                   >Chi sono</a
                 >
               </li>
               <li>
-                <a class="Footer-link" href="#studies" data-i18n="nav.percorso"
+                <a
+                  class="Footer-link"
+                  href="#studies"
+                  title="Ir a Percorso"
+                  data-i18n="nav.percorso"
                   >Percorso</a
                 >
               </li>
               <li>
-                <a class="Footer-link" href="#skills" data-i18n="nav.stack"
+                <a
+                  class="Footer-link"
+                  href="#skills"
+                  title="Ir a Stack"
+                  data-i18n="nav.stack"
                   >Stack</a
                 >
               </li>
               <li>
-                <a class="Footer-link" href="#projects" data-i18n="nav.progetti"
+                <a
+                  class="Footer-link"
+                  href="#projects"
+                  title="Ir a Progetti"
+                  data-i18n="nav.progetti"
                   >Progetti</a
                 >
               </li>
               <li>
-                <a class="Footer-link" href="#passions" data-i18n="nav.passioni"
+                <a
+                  class="Footer-link"
+                  href="#passions"
+                  title="Ir a Passioni"
+                  data-i18n="nav.passioni"
                   >Passioni</a
                 >
               </li>
               <li>
-                <a class="Footer-link" href="#contacts" data-i18n="nav.contatti"
+                <a
+                  class="Footer-link"
+                  href="#contacts"
+                  title="Ir a Contatti"
+                  data-i18n="nav.contatti"
                   >Contatti</a
                 >
               </li>
@@ -1445,12 +1579,18 @@
             <h2 class="Footer-title" data-i18n="nav.contatti">Contatti</h2>
             <ul class="Footer-list">
               <li>
-                <a class="Footer-link" href="mailto:gemma97@live.it">Email</a>
+                <a
+                  class="Footer-link"
+                  href="mailto:gemma97@live.it"
+                  title="Escribir un email a Gemma"
+                  >Email</a
+                >
               </li>
               <li>
                 <a
                   class="Footer-link"
                   href="https://github.com/Gemmacentr"
+                  title="Ver el perfil de GitHub (se abre en una pestaña nueva)"
                   target="_blank"
                   rel="noopener noreferrer"
                   >GitHub</a
@@ -1460,6 +1600,7 @@
                 <a
                   class="Footer-link"
                   href="https://www.linkedin.com/in/gemma-centrone-831376174/"
+                  title="Ver el perfil de LinkedIn (se abre en una pestaña nueva)"
                   target="_blank"
                   rel="noopener noreferrer"
                   >LinkedIn</a
@@ -1469,6 +1610,7 @@
                 <a
                   class="Footer-link"
                   href="https://www.instagram.com/ser.gemma/"
+                  title="Ver el perfil de Instagram (se abre en una pestaña nueva)"
                   target="_blank"
                   rel="noopener noreferrer"
                   >Instagram</a
@@ -1485,6 +1627,7 @@
                   class="Footer-link"
                   href="./assets/cv-gemma-centrone.pdf"
                   download
+                  title="Descargar el currículum en PDF"
                   data-i18n="cv.download"
                   >Scarica il CV</a
                 >
@@ -1493,6 +1636,7 @@
                 <a
                   class="Footer-link"
                   href="./assets/camino-santiago-web.pdf"
+                  title="Abrir la revista en PDF (se abre en una pestaña nueva)"
                   target="_blank"
                   rel="noopener noreferrer"
                   data-i18n="footer.magazine"
@@ -1503,6 +1647,7 @@
           </div>
         </div>
 
+        <!-- Copyright, nota de privacidad y volver arriba -->
         <div class="Footer-bottom">
           <p>© 2026 Gemma Centrone</p>
           <p class="Footer-privacy">
@@ -1514,7 +1659,11 @@
               >La playlist si carica da Spotify solo se la apri.</span
             >
           </p>
-          <a class="Footer-link" href="#inicio" data-i18n="footer.top"
+          <a
+            class="Footer-link"
+            href="#inicio"
+            title="Volver al inicio"
+            data-i18n="footer.top"
             >Torna su ↑</a
           >
         </div>

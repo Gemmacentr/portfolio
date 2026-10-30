@@ -1,3 +1,29 @@
+/*
+  ==========================================================================
+  style.css · Portfolio Gemma Centrone
+
+  Estructura general:
+    1. Tipografías ........ @font-face en local (woff2)
+    2. Custom properties .. colores, tamaños y fuentes
+    3. Reset .............. base común para todos los navegadores
+    4. Base ............... body y títulos
+    5. Cursor y Loader
+    6. Header ............. logo, idiomas y navegación (móvil primero)
+    7. Main (bento) ....... Hero, Contact, Cv, About, Passions, Project,
+                            Video, Playlist y Lightbox
+    8. Secciones .......... Divider, Story, Studies, Marquee, Projects,
+                            Trek, Contacts y Footer
+    9. Utilidades ......... u-reveal y u-visuallyHidden
+   10. Media queries ...... 820px, 740px y 480px
+   11. Animaciones ........ @keyframes
+   12. Accesibilidad ...... hover: none y prefers-reduced-motion
+
+  Metodología: SUIT CSS (Componente, Componente-descendiente,
+  Componente--modificador, estados isActive / isOpen / isHidden...)
+  ==========================================================================
+*/
+
+/* ===== 1. TIPOGRAFÍAS: Inter (texto) y Cormorant Garamond (títulos) ===== */
 @font-face {
   font-family: "Inter";
   src: url("../fonts/inter-400.woff2") format("woff2");
@@ -17,21 +43,26 @@
   font-display: swap;
 }
 
+/* ===== 2. CUSTOM PROPERTIES ===== */
 :root {
-  --color-bg: #f5f1e4;
-  --ink: #17150f;
-  --color-accent: #f2542d;
-  --color-overlay: rgb(23 21 15 / 85%);
+  /* Colores */
+  --color-bg: #f5f1e4; /* fondo crema */
+  --ink: #17150f; /* texto y fondos oscuros */
+  --color-accent: #f2542d; /* naranja de acento */
+  --color-overlay: rgb(23 21 15 / 85%); /* capa del slider y Lightbox */
 
-  --icon-size: 2.5rem;
-  --title-size: 4rem;
+  /* Tamaños */
+  --icon-size: 2.5rem; /* iconos y botones redondos */
+  --title-size: 4rem; /* títulos de sección y Marquee (2.5rem en móvil) */
 
-  --font-display: "Cormorant Garamond", serif;
-  --font-body: "Inter", sans-serif;
+  /* Fuentes */
+  --font-display: "Cormorant Garamond", serif; /* títulos */
+  --font-body: "Inter", sans-serif; /* texto */
   font-size: 100%;
   scroll-behavior: smooth;
 }
 
+/* ===== 3. RESET ===== */
 *,
 *::before,
 *::after {
@@ -147,6 +178,7 @@ svg {
   fill: currentColor;
 }
 
+/* ===== 4. BASE: body sin scroll hasta que termina el loader ===== */
 body {
   min-height: 100vh;
   overflow: hidden;
@@ -156,6 +188,7 @@ body {
   cursor: none;
 }
 
+/* Títulos con la fuente display */
 h2,
 h3 {
   font-family: var(--font-display);
@@ -163,6 +196,7 @@ h3 {
   line-height: 1.1;
 }
 
+/* ===== 5. CURSOR personalizado (sigue al ratón con JS) ===== */
 .Cursor {
   position: fixed;
   top: 0;
@@ -179,6 +213,7 @@ h3 {
   opacity: 0;
 }
 
+/* ===== LOADER: pantalla de carga con contador y barra ===== */
 .Loader {
   position: fixed;
   inset: 0;
@@ -216,6 +251,7 @@ h3 {
   transition: width 0.1s linear;
 }
 
+/* Contenido de la web: aparece al terminar el loader */
 .SiteContent {
   opacity: 0;
   transition: opacity 0.5s ease;
@@ -224,6 +260,7 @@ h3 {
   opacity: 1;
 }
 
+/* Si el loader ya se vio en esta sesión, se salta (clase de init.js) */
 .isLoaded .Loader {
   display: none;
 }
@@ -234,6 +271,7 @@ h3 {
   overflow: auto;
 }
 
+/* ===== 6. HEADER ===== */
 .Header {
   position: relative;
   z-index: 10;
@@ -257,6 +295,7 @@ h3 {
   color: var(--color-bg);
 }
 
+/* Selector de idioma */
 .Lang {
   display: flex;
   flex-flow: row nowrap;
@@ -281,6 +320,7 @@ h3 {
   background-color: var(--ink);
 }
 
+/* Navegación en móvil: panel a pantalla completa que baja desde arriba */
 .Nav-list {
   position: fixed;
   inset: 0;
@@ -306,6 +346,7 @@ h3 {
   transform: translateY(0);
   pointer-events: auto;
 }
+/* Sin animación mientras se redimensiona la ventana */
 .isResizing .Nav-list {
   transition: none;
 }
@@ -323,6 +364,7 @@ h3 {
   color: var(--color-accent);
 }
 
+/* Botón hamburguesa: las dos líneas se cruzan en una X al abrir */
 .Menu-nav {
   position: relative;
   z-index: 95;
@@ -369,6 +411,7 @@ h3 {
   transform: translate(-50%, -50%) rotate(-45deg);
 }
 
+/* Header en escritorio: logo, navegación y idiomas en una fila */
 @media (min-width: 770px) {
   .Header {
     display: grid;
@@ -419,6 +462,7 @@ h3 {
   }
 }
 
+/* ===== 7. MAIN: cuadrícula bento de 4 columnas ===== */
 .Main {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -428,6 +472,7 @@ h3 {
   margin: 2rem auto;
 }
 
+/* Foto de Gemma */
 .Hero {
   grid-column: 1/3;
   grid-row: 1/3;
@@ -437,6 +482,7 @@ h3 {
   background-position: 50% 25%;
 }
 
+/* Celda Scrivimi: la onda se mueve al pasar el ratón */
 .Contact {
   grid-column: 3/4;
   grid-row: 1/2;
@@ -478,6 +524,7 @@ h3 {
   animation-play-state: running;
 }
 
+/* Celda de descarga del CV */
 .Cv {
   grid-column: 4/5;
   grid-row: 1/2;
@@ -514,16 +561,14 @@ h3 {
 .Cv-icon {
   width: var(--icon-size);
   height: var(--icon-size);
-  transition:
-    filter 0.3s ease,
-    transform 0.3s ease;
+  transition: transform 0.3s ease;
 }
 .Cv-link:hover .Cv-icon,
 .Cv-link:focus-visible .Cv-icon {
-  filter: invert(1);
   transform: translateY(0.25rem);
 }
 
+/* Presentación sobre fondo oscuro */
 .About {
   grid-column: 3/5;
   grid-row: 2/3;
@@ -549,6 +594,7 @@ h3 {
   font-size: 0.85rem;
 }
 
+/* Acceso a la sección Passioni */
 .Passions {
   grid-column: 1/3;
   grid-row: 3/4;
@@ -571,6 +617,7 @@ h3 {
   font-size: 2rem;
 }
 
+/* Slider de proyectos destacados: las slides se superponen y cambian de opacidad */
 .Project {
   position: relative;
   grid-column: 3/5;
@@ -594,6 +641,7 @@ h3 {
 .Project-img {
   height: 100%;
 }
+/* Texto del slide sobre un degradado oscuro */
 .Project-caption {
   position: absolute;
   right: 0;
@@ -627,6 +675,7 @@ h3 {
 .Project-caption:focus-visible .Project-arrow {
   transform: rotate(45deg);
 }
+/* Controles del slider */
 .Project-controls {
   position: absolute;
   right: 1.25rem;
@@ -660,6 +709,7 @@ h3 {
   font-size: 0.9rem;
 }
 
+/* Vídeo en bucle */
 .Video {
   grid-column: 2/3;
   grid-row: 4/5;
@@ -669,6 +719,7 @@ h3 {
   height: 100%;
 }
 
+/* Playlist: el disco gira y abre el Lightbox */
 .Playlist {
   grid-column: 1/2;
   grid-row: 4/5;
@@ -684,9 +735,13 @@ h3 {
   height: 100%;
   padding: 1rem;
 }
-.Playlist img {
+.Playlist-picture {
   width: auto;
   height: 60%;
+}
+.Playlist img {
+  width: auto;
+  height: 100%;
   object-fit: contain;
   animation: spin 3s linear infinite;
 }
@@ -695,6 +750,7 @@ h3 {
   font-size: 0.9rem;
 }
 
+/* Lightbox de Spotify */
 .Lightbox {
   position: fixed;
   inset: 0;
@@ -752,6 +808,9 @@ h3 {
   background-color: var(--color-bg);
 }
 
+/* ===== 8. SECCIONES ===== */
+
+/* Divider: banda oscura con el título de cada sección */
 .Divider {
   display: flex;
   flex-flow: row nowrap;
@@ -767,6 +826,7 @@ h3 {
   font-family: var(--font-display);
 }
 
+/* Chi sono: intro y tres pasos */
 .Story {
   max-width: 75rem;
   margin: 0 auto;
@@ -802,6 +862,7 @@ h3 {
   margin-top: 0.5rem;
 }
 
+/* Percorso: experiencia y formación en dos columnas */
 .Section-studies {
   max-width: 75rem;
   margin: 0 auto;
@@ -834,6 +895,7 @@ h3 {
   text-align: center;
 }
 
+/* Cada puesto o estudio, con línea de acento a la izquierda */
 .StudyItem {
   padding-left: 1rem;
   border-left: 3px solid var(--color-accent);
@@ -884,6 +946,7 @@ h3 {
   font-size: 0.75rem;
 }
 
+/* Módulos del máster, desplegables con details */
 .StudyModules {
   margin-top: 1rem;
 }
@@ -932,6 +995,7 @@ h3 {
   font-size: 0.8rem;
 }
 
+/* Stack: cinta que se mueve sin fin (dos grupos iguales) */
 .Marquee {
   overflow: hidden;
   padding: 1rem 0;
@@ -962,6 +1026,7 @@ h3 {
   color: var(--color-accent);
 }
 
+/* Progetti */
 .Section-projects {
   max-width: 75rem;
   margin: 0 auto;
@@ -973,6 +1038,7 @@ h3 {
   text-align: center;
 }
 
+/* Filtros por disciplina */
 .Filters {
   display: flex;
   flex-flow: row wrap;
@@ -1000,6 +1066,7 @@ h3 {
   background-color: var(--ink);
 }
 
+/* Rejilla de proyectos: títulos de grupo, intro y botón móvil ocupan toda la fila */
 .ProjectGrid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -1023,6 +1090,7 @@ h3 {
 .ProjectGrid-group--uni {
   font-size: 1.25rem;
 }
+/* Los filtros añaden hidden a los grupos vacíos */
 .ProjectGrid-group[hidden],
 .ProjectGrid-intro[hidden],
 .ProjectGrid-toggle[hidden] {
@@ -1040,9 +1108,11 @@ h3 {
   font-size: 0.8rem;
   font-weight: 400;
 }
+/* Botón para abrir cada grupo: solo en móvil */
 .ProjectGrid-toggle {
   display: none;
 }
+/* Tarjeta de proyecto */
 .ProjectCard {
   display: flex;
   flex-flow: column nowrap;
@@ -1117,6 +1187,7 @@ h3 {
   border-color: var(--ink);
 }
 
+/* Passioni: dos tarjetas con carrusel */
 .Trek {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -1149,6 +1220,7 @@ h3 {
 .Trek-link:focus-visible {
   border-color: var(--ink);
 }
+/* Carrusel de la revista: scroll horizontal con scroll-snap */
 .Trek-carousel {
   display: flex;
   flex-flow: row nowrap;
@@ -1160,13 +1232,16 @@ h3 {
   border-radius: 1rem;
   scroll-snap-type: x mandatory;
 }
-.Trek-img {
+.Trek-picture {
   flex: 0 0 100%;
-  height: auto;
-  aspect-ratio: 5/7;
   scroll-snap-align: start;
 }
+.Trek-img {
+  height: auto;
+  aspect-ratio: 5/7;
+}
 
+/* Galería Alta Via 1: el track se mueve con translateX desde JS */
 .Gallery {
   width: 100%;
   overflow: hidden;
@@ -1178,12 +1253,15 @@ h3 {
   align-items: center;
   transition: transform 0.5s ease;
 }
-.Gallery-img {
+.Gallery-picture {
   flex: 0 0 100%;
+}
+.Gallery-img {
   height: auto;
   aspect-ratio: 5/7;
   border-radius: 1rem;
 }
+/* Puntos de la galería */
 .Gallery-dots {
   display: flex;
   flex-flow: row nowrap;
@@ -1205,6 +1283,7 @@ h3 {
   background-color: var(--color-accent);
 }
 
+/* Contatti: email grande y enlaces */
 .Contacts {
   max-width: 75rem;
   margin: 0 auto;
@@ -1231,6 +1310,7 @@ h3 {
   stroke: var(--color-accent);
   stroke-width: 2;
 }
+/* Enlaces de contacto y redes */
 .Contacts-links {
   display: flex;
   flex-flow: row nowrap;
@@ -1257,6 +1337,7 @@ h3 {
   background-color: var(--ink);
 }
 
+/* Footer: mapa del sitio en tres columnas y barra inferior */
 .Footer {
   padding: 4rem 2rem 1rem;
   color: var(--color-bg);
@@ -1292,6 +1373,7 @@ h3 {
 .Footer-link:focus-visible {
   color: var(--color-accent);
 }
+/* Copyright, privacidad y volver arriba */
 .Footer-bottom {
   display: flex;
   flex-flow: row nowrap;
@@ -1312,13 +1394,28 @@ h3 {
   text-align: center;
 }
 
+/* ===== 9. UTILIDADES ===== */
+
+/* Aparece al hacer scroll (la clase isVisible la pone JS) */
 .u-reveal {
   opacity: 0;
 }
 .u-reveal.isVisible {
   animation: slideUp 0.8s ease both;
 }
+/* Oculta un elemento a la vista pero lo deja para lectores de pantalla */
+.u-visuallyHidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
 
+/* ===== 10. MEDIA QUERIES ===== */
+
+/* Tablet: estudios en una columna y proyectos en dos */
 @media (max-width: 820px) {
   .Section-studies,
   .Section-projects {
@@ -1340,6 +1437,7 @@ h3 {
   }
 }
 
+/* Móvil: bento en dos columnas, secciones en una y grupos de proyectos desplegables */
 @media (max-width: 740px) {
   :root {
     --title-size: 2.5rem;
@@ -1430,6 +1528,7 @@ h3 {
   }
 }
 
+/* Móvil pequeño: proyectos en una columna */
 @media (max-width: 480px) {
   .Section-studies,
   .Section-projects {
@@ -1454,6 +1553,9 @@ h3 {
   }
 }
 
+/* ===== 11. ANIMACIONES ===== */
+
+/* Giro del disco de la playlist */
 @keyframes spin {
   from {
     transform: rotate(0deg);
@@ -1462,6 +1564,7 @@ h3 {
     transform: rotate(360deg);
   }
 }
+/* Movimiento de la onda */
 @keyframes waveMove {
   from {
     transform: translateX(0);
@@ -1470,6 +1573,7 @@ h3 {
     transform: translateX(-50%);
   }
 }
+/* Punto que parpadea en el máster en curso */
 @keyframes livepulse {
   0%,
   100% {
@@ -1479,6 +1583,7 @@ h3 {
     opacity: 0.3;
   }
 }
+/* Cinta del Marquee */
 @keyframes slideLeft {
   from {
     transform: translateX(0);
@@ -1487,6 +1592,7 @@ h3 {
     transform: translateX(-50%);
   }
 }
+/* Entrada de las tarjetas de proyecto */
 @keyframes fadeup {
   from {
     opacity: 0;
@@ -1497,6 +1603,7 @@ h3 {
     transform: translateY(0);
   }
 }
+/* Entrada de las secciones al hacer scroll */
 @keyframes slideUp {
   from {
     opacity: 0;
@@ -1508,12 +1615,16 @@ h3 {
   }
 }
 
+/* ===== 12. ACCESIBILIDAD ===== */
+
+/* Sin ratón: sin cursor personalizado */
 @media (hover: none) {
   .Cursor {
     display: none;
   }
 }
 
+/* Movimiento reducido: se quitan animaciones y transiciones */
 @media (prefers-reduced-motion: reduce) {
   .Cursor {
     display: none;
