@@ -102,7 +102,16 @@ const closeMenuHandler = () => {
   navigationHeader.classList.remove("isOpen");
   headerLogo.classList.remove("isOpen");
 };
+// Spegne la transizione del menu mentre si ridimensiona la finestra
+let resizeTimer;
 
+window.addEventListener("resize", function () {
+  document.body.classList.add("isResizing");
+  clearTimeout(resizeTimer);
+  resizeTimer = setTimeout(function () {
+    document.body.classList.remove("isResizing");
+  }, 400);
+});
 navLinks.forEach((link) => {
   link.addEventListener("click", closeMenuHandler);
 });
@@ -146,7 +155,9 @@ const chiudi = document.querySelector(".Lightbox-btn");
   }));
 
 const cards = document.querySelectorAll(".ProjectCard");
-const groups = document.querySelectorAll(".ProjectGrid-group");
+const groups = document.querySelectorAll(
+  ".ProjectGrid-group, .ProjectGrid-intro, .ProjectGrid-toggle",
+);
 const buttons = document.querySelectorAll(".Filters-button");
 
 function filterProjects(filter) {
@@ -188,6 +199,22 @@ function filterProjects(filter) {
     }
   });
 }
+const toggles = document.querySelectorAll(".ProjectGrid-toggle");
+
+toggles.forEach(function (toggle) {
+  toggle.addEventListener("click", function () {
+    let groupName = toggle.dataset.groupLabel;
+    let isOpen = toggle.classList.toggle("isOpen");
+
+    toggle.setAttribute("aria-expanded", isOpen);
+
+    cards.forEach(function (card) {
+      if (card.dataset.group === groupName) {
+        card.classList.toggle("isOpen", isOpen);
+      }
+    });
+  });
+});
 
 // Quando clicco su un pulsante, filtro i progetti
 buttons.forEach(function (button) {
@@ -225,7 +252,3 @@ galleryDots.forEach((dot, i) => {
     dot.classList.add("isActive");
   });
 });
-
-const projectGroups = document.querySelectorAll(
-  ".ProjectGrid-group, .ProjectGrid-intro",
-);

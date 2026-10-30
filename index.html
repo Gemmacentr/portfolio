@@ -707,20 +707,7 @@
           front-end, data visualization, UI/UX, 3D e design. Filtra per
           disciplina.
         </p>
-        <div class="Stats">
-          <div class="Stats-item">
-            <b class="Stats-number Stats-number--online">0</b
-            ><span data-i18n="stat.projects">progetti da visitare</span>
-          </div>
-          <div class="Stats-item">
-            <b class="Stats-number Stats-number--tech">0</b
-            ><span data-i18n="stat.tech">tecnologie</span>
-          </div>
-          <div class="Stats-item">
-            <b class="Stats-number Stats-number--disc">0</b
-            ><span data-i18n="stat.disc">discipline</span>
-          </div>
-        </div>
+
         <div class="Filters" role="group" aria-label="Filtra i progetti">
           <button
             type="button"
@@ -796,6 +783,15 @@
             di Vue 3: senza di me l'IA non li avrebbe fatti, io senza l'IA sì,
             solo in più tempo.
           </p>
+          <button
+            class="ProjectGrid-toggle"
+            type="button"
+            aria-expanded="false"
+            data-group-label="vue"
+            data-i18n="toggle.show"
+          >
+            Vedi i progetti
+          </button>
           <article class="ProjectCard" data-group="vue" data-cats="frontend">
             <div class="ProjectCard-top">
               <span class="ProjectCard-badge" data-i18n="badge.core"
@@ -880,6 +876,44 @@
           >
             <span data-i18n="group.main">Lavori e prove tecniche</span>
           </h3>
+          <button
+            class="ProjectGrid-toggle"
+            type="button"
+            aria-expanded="false"
+            data-group-label="main"
+            data-i18n="toggle.show"
+          >
+            Vedi i progetti
+          </button>
+          <article
+            class="ProjectCard"
+            data-group="main"
+            data-cats="frontend design"
+          >
+            <div class="ProjectCard-top">
+              <span class="ProjectCard-badge" data-i18n="badge.client"
+                >Cliente</span
+              >
+            </div>
+            <h4 class="ProjectCard-title">MAMO</h4>
+            <p class="ProjectCard-note" data-i18n="note.mamo">
+              Sito per M.A.MO (HK) Ltd: design, sviluppo e indicizzazione su
+              Google.
+            </p>
+            <div class="ProjectCard-tags">
+              <span>HTML</span><span>CSS</span><span>JavaScript</span
+              ><span>SEO</span>
+            </div>
+            <div class="ProjectCard-links">
+              <a
+                href="https://gemmacentr.github.io/MAMO/"
+                target="_blank"
+                rel="noopener"
+                data-i18n="link.site"
+                >Apri il sito ↗</a
+              >
+            </div>
+          </article>
           <article class="ProjectCard" data-group="main" data-cats="frontend">
             <div class="ProjectCard-top">
               <span class="ProjectCard-badge" data-i18n="badge.hiring"
@@ -1020,6 +1054,24 @@
           >
             <span data-i18n="group.uni">Progetti universitari</span>
           </h3>
+
+          <p
+            class="ProjectGrid-intro"
+            data-group-label="uni"
+            data-i18n="group.uni.intro"
+          >
+            Quando l'IA non esisteva: codice scritto riga per riga, tra Bologna
+            e il primo lavoro.
+          </p>
+          <button
+            class="ProjectGrid-toggle"
+            type="button"
+            aria-expanded="false"
+            data-group-label="uni"
+            data-i18n="toggle.show"
+          >
+            Vedi i progetti
+          </button>
           <article
             class="ProjectCard ProjectCard--uni"
             data-group="uni"
