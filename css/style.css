@@ -828,15 +828,27 @@ h3 {
   display: block;
 }
 .Story-steps {
+  position: relative;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
 }
+.Story-steps::before {
+  content: "";
+  position: absolute;
+  top: 1.5rem;
+  right: 17%;
+  left: 17%;
+  border-top: 2px dashed var(--color-accent);
+}
 .Story-number {
+  position: relative;
+  padding: 0 1rem;
   font-family: var(--font-display);
   font-size: 3rem;
   line-height: 1;
   color: var(--color-accent);
+  background-color: var(--color-bg);
 }
 .Story-title {
   margin-top: 0.5rem;
@@ -1506,6 +1518,9 @@ h3 {
   }
   .ProjectCard.isOpen:not([hidden]) {
     display: flex;
+  }
+  .Story-steps::before {
+    display: none;
   }
 }
 

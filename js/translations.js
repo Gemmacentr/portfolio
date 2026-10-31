@@ -106,12 +106,10 @@
       "badge.core": "Stack principale",
       "badge.ai": "IA · 4-5 prompt",
       "badge.hiring": "Prova per assunzione",
-      "badge.soon": "Galleria in arrivo",
       "badge.uni": "Università",
       "badge.desktop": "Ottimizzato per desktop",
       "badge.mobile": "Anche mobile",
       "badge.client": "Cliente",
-      "title.design": "Design grafico",
       "note.vuesite":
         "Io ho dato direzione e controllo, l'IA ha scritto il codice.",
       "note.mamo":
@@ -121,8 +119,11 @@
         "Prova per assunzione: Index e Home pensate come proposta per il loro sito, con il progetto su Figma.",
       "note.react": "Prova per assunzione sviluppata in React.",
       "note.kikeroo": "Prova per assunzione costruita con EJS e Leaflet.",
+      "note.mappe":
+        "Mappa di Bologna con sette stili di OpenStreetMap, costruita con Leaflet.",
       "note.biopharm": "Redesign del Register: prototipo interattivo su Figma.",
-      "note.design": "Lavori di grafica con Illustrator, InDesign e Photoshop.",
+      "note.design":
+        "Rivista sul Cammino di Santiago presentata all'esame di Design grafico del máster: versione per la stampa, con copertina, impaginazione e immagini.",
       "note.massacre":
         "Ontologia pubblicata come sito, con visualizzazione WebVOWL.",
       "note.dataviz": "Data visualization con dati gestiti in Python.",
@@ -230,12 +231,10 @@
       "badge.core": "Core stack",
       "badge.ai": "AI · 4-5 prompts",
       "badge.hiring": "Hiring test",
-      "badge.soon": "Gallery coming soon",
       "badge.uni": "University",
       "badge.desktop": "Desktop-optimised",
       "badge.mobile": "Mobile too",
       "badge.client": "Client",
-      "title.design": "Graphic design",
       "note.vuesite":
         "I set the direction and checked the work; the AI wrote the code.",
       "note.mamo":
@@ -245,8 +244,11 @@
         "Hiring test: Index and Home pages designed as a proposal for their site, with the design on Figma.",
       "note.react": "Hiring test built with React.",
       "note.kikeroo": "Hiring test built with EJS and Leaflet.",
+      "note.mappe":
+        "Map of Bologna with seven OpenStreetMap styles, built with Leaflet.",
       "note.biopharm": "Register redesign: interactive prototype on Figma.",
-      "note.design": "Graphic work with Illustrator, InDesign and Photoshop.",
+      "note.design":
+        "Magazine about the Camino de Santiago presented for the master's Graphic Design exam: print version, with cover, layout and images.",
       "note.massacre":
         "An ontology published as a website, with WebVOWL visualisation.",
       "note.dataviz": "Data visualisation with data handled in Python.",
@@ -352,12 +354,10 @@
       "badge.core": "Stack principal",
       "badge.ai": "IA · 4-5 prompts",
       "badge.hiring": "Prueba de selección",
-      "badge.soon": "Galería próximamente",
       "badge.uni": "Universidad",
       "badge.desktop": "Optimizado para escritorio",
       "badge.mobile": "También móvil",
       "badge.client": "Cliente",
-      "title.design": "Diseño gráfico",
       "note.vuesite":
         "Yo marqué la dirección y revisé el trabajo; la IA escribió el código.",
       "note.mamo":
@@ -367,8 +367,11 @@
         "Prueba de selección: páginas Index y Home pensadas como propuesta para su sitio, con el diseño en Figma.",
       "note.react": "Prueba de selección desarrollada con React.",
       "note.kikeroo": "Prueba de selección creada con EJS y Leaflet.",
+      "note.mappe":
+        "Mapa de Bolonia con siete estilos de OpenStreetMap, hecho con Leaflet.",
       "note.biopharm": "Rediseño del Register: prototipo interactivo en Figma.",
-      "note.design": "Trabajos gráficos con Illustrator, InDesign y Photoshop.",
+      "note.design":
+        "Revista sobre el Camino de Santiago presentada en el examen de Diseño gráfico del máster: versión para imprenta, con portada, maquetación e imágenes.",
       "note.massacre":
         "Ontología publicada como sitio web, con visualización WebVOWL.",
       "note.dataviz": "Visualización de datos gestionados con Python.",

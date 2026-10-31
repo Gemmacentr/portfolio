@@ -942,11 +942,7 @@
           >
             Vedi i progetti
           </button>
-          <article
-            class="ProjectCard"
-            data-group="main"
-            data-cats="frontend design"
-          >
+          <article class="ProjectCard" data-group="main" data-cats="frontend">
             <div class="ProjectCard-top">
               <span class="ProjectCard-badge" data-i18n="badge.client"
                 >Cliente</span
@@ -967,6 +963,30 @@
                 target="_blank"
                 rel="noopener noreferrer"
                 title="Abrir MAMO (se abre en una pestaña nueva)"
+                data-i18n="link.site"
+                >Apri il sito ↗</a
+              >
+            </div>
+          </article>
+          <article class="ProjectCard" data-group="main" data-cats="frontend">
+            <div class="ProjectCard-top">
+              <span class="ProjectCard-badge" data-i18n="badge.hiring"
+                >Prova per assunzione</span
+              >
+            </div>
+            <h4 class="ProjectCard-title">Kikeroo</h4>
+            <p class="ProjectCard-note" data-i18n="note.kikeroo">
+              Prova per assunzione costruita con EJS e Leaflet.
+            </p>
+            <div class="ProjectCard-tags">
+              <span>EJS</span><span>Leaflet</span>
+            </div>
+            <div class="ProjectCard-links">
+              <a
+                href="https://kikeroo-three.vercel.app/home"
+                target="_blank"
+                rel="noopener noreferrer"
+                title="Abrir Kikeroo (se abre en una pestaña nueva)"
                 data-i18n="link.site"
                 >Apri il sito ↗</a
               >
@@ -999,7 +1019,7 @@
           <article
             class="ProjectCard"
             data-group="main"
-            data-cats="frontend uiux"
+            data-cats="frontend uiux 3d"
           >
             <div class="ProjectCard-top">
               <span class="ProjectCard-badge" data-i18n="badge.hiring"
@@ -1054,30 +1074,7 @@
               >
             </div>
           </article>
-          <article class="ProjectCard" data-group="main" data-cats="frontend">
-            <div class="ProjectCard-top">
-              <span class="ProjectCard-badge" data-i18n="badge.hiring"
-                >Prova per assunzione</span
-              >
-            </div>
-            <h4 class="ProjectCard-title">Kikeroo</h4>
-            <p class="ProjectCard-note" data-i18n="note.kikeroo">
-              Prova per assunzione costruita con EJS e Leaflet.
-            </p>
-            <div class="ProjectCard-tags">
-              <span>EJS</span><span>Leaflet</span>
-            </div>
-            <div class="ProjectCard-links">
-              <a
-                href="https://kikeroo-three.vercel.app/home"
-                target="_blank"
-                rel="noopener noreferrer"
-                title="Abrir Kikeroo (se abre en una pestaña nueva)"
-                data-i18n="link.site"
-                >Apri il sito ↗</a
-              >
-            </div>
-          </article>
+
           <article class="ProjectCard" data-group="main" data-cats="uiux">
             <h4 class="ProjectCard-title">Biopharm Project</h4>
             <p class="ProjectCard-note" data-i18n="note.biopharm">
@@ -1095,21 +1092,50 @@
               >
             </div>
           </article>
-          <article class="ProjectCard" data-group="main" data-cats="design">
-            <div class="ProjectCard-top">
-              <span class="ProjectCard-badge" data-i18n="badge.soon"
-                >Galleria in arrivo</span
-              >
-            </div>
-            <h4 class="ProjectCard-title" data-i18n="title.design">
-              Design grafico
-            </h4>
-            <p class="ProjectCard-note" data-i18n="note.design">
-              Lavori di grafica con Illustrator, InDesign e Photoshop.
+          <article class="ProjectCard" data-group="main" data-cats="dataviz">
+            <h4 class="ProjectCard-title">Mappe</h4>
+            <p class="ProjectCard-note" data-i18n="note.mappe">
+              Mappa di Bologna con sette stili di OpenStreetMap, costruita con
+              Leaflet.
             </p>
             <div class="ProjectCard-tags">
-              <span>Illustrator</span><span>InDesign</span
-              ><span>Photoshop</span>
+              <span>JavaScript</span><span>Leaflet</span
+              ><span>OpenStreetMap</span>
+            </div>
+            <div class="ProjectCard-links">
+              <a
+                href="https://gemmacentr.github.io/Mappe/"
+                title="Abrir Mappe (se abre en una pestaña nueva)"
+                target="_blank"
+                rel="noopener noreferrer"
+                data-i18n="link.site"
+                >Apri il sito ↗</a
+              >
+            </div>
+          </article>
+          <article class="ProjectCard" data-group="main" data-cats="design">
+            <div class="ProjectCard-top">
+              <span class="ProjectCard-badge">Máster CEI</span>
+            </div>
+            <h4 class="ProjectCard-title">The idea of Santiago</h4>
+            <p class="ProjectCard-note" data-i18n="note.design">
+              Rivista sul Cammino di Santiago presentata all'esame di Design
+              grafico del máster: versione per la stampa, con copertina,
+              impaginazione e immagini.
+            </p>
+            <div class="ProjectCard-tags">
+              <span>InDesign</span><span>Photoshop</span
+              ><span>Illustrator</span>
+            </div>
+            <div class="ProjectCard-links">
+              <a
+                href="./assets/camino-santiago-print.pdf"
+                title="Abrir la revista en PDF (se abre en una pestaña nueva)"
+                target="_blank"
+                rel="noopener noreferrer"
+                data-i18n="trek.link"
+                >Sfoglia la rivista ↗</a
+              >
             </div>
           </article>
           <!-- Grupo: proyectos universitarios -->
@@ -1142,6 +1168,66 @@
             class="ProjectCard ProjectCard--uni"
             data-group="uni"
             data-cats="frontend"
+          >
+            <div class="ProjectCard-top">
+              <span class="ProjectCard-badge" data-i18n="badge.uni"
+                >Università</span
+              ><span class="ProjectCard-badge" data-i18n="badge.mobile"
+                >Anche mobile</span
+              >
+            </div>
+            <h4 class="ProjectCard-title">Mirabilia</h4>
+            <p class="ProjectCard-note" data-i18n="note.mirabilia">
+              Sito in JavaScript, pensato anche per mobile.
+            </p>
+            <div class="ProjectCard-tags">
+              <span>JavaScript</span><span>DOM</span>
+            </div>
+            <div class="ProjectCard-links">
+              <a
+                href="https://mirabiliamagazine.github.io/mirabilia/"
+                target="_blank"
+                rel="noopener noreferrer"
+                title="Abrir Mirabilia (se abre en una pestaña nueva)"
+                data-i18n="link.site"
+                >Apri il sito ↗</a
+              >
+            </div>
+          </article>
+          <article
+            class="ProjectCard ProjectCard--uni"
+            data-group="uni"
+            data-cats="dataviz"
+          >
+            <div class="ProjectCard-top">
+              <span class="ProjectCard-badge" data-i18n="badge.uni"
+                >Università</span
+              ><span class="ProjectCard-badge" data-i18n="badge.desktop"
+                >Ottimizzato per desktop</span
+              >
+            </div>
+            <h4 class="ProjectCard-title">Odohteu</h4>
+            <p class="ProjectCard-note" data-i18n="note.dataviz">
+              Data visualization con dati gestiti in Python.
+            </p>
+            <div class="ProjectCard-tags">
+              <span>Leaflet</span><span>Chart.js</span><span>Python</span>
+            </div>
+            <div class="ProjectCard-links">
+              <a
+                href="https://odohteu.github.io/index.html"
+                target="_blank"
+                rel="noopener noreferrer"
+                title="Abrir Odohteu (se abre en una pestaña nueva)"
+                data-i18n="link.site"
+                >Apri il sito ↗</a
+              >
+            </div>
+          </article>
+          <article
+            class="ProjectCard ProjectCard--uni"
+            data-group="uni"
+            data-cats="frontend dataviz"
           >
             <div class="ProjectCard-top">
               <span class="ProjectCard-badge" data-i18n="badge.uni"
@@ -1199,36 +1285,7 @@
               >
             </div>
           </article>
-          <article
-            class="ProjectCard ProjectCard--uni"
-            data-group="uni"
-            data-cats="dataviz"
-          >
-            <div class="ProjectCard-top">
-              <span class="ProjectCard-badge" data-i18n="badge.uni"
-                >Università</span
-              ><span class="ProjectCard-badge" data-i18n="badge.desktop"
-                >Ottimizzato per desktop</span
-              >
-            </div>
-            <h4 class="ProjectCard-title">Odohteu</h4>
-            <p class="ProjectCard-note" data-i18n="note.dataviz">
-              Data visualization con dati gestiti in Python.
-            </p>
-            <div class="ProjectCard-tags">
-              <span>Leaflet</span><span>Chart.js</span><span>Python</span>
-            </div>
-            <div class="ProjectCard-links">
-              <a
-                href="https://odohteu.github.io/index.html"
-                target="_blank"
-                rel="noopener noreferrer"
-                title="Abrir Odohteu (se abre en una pestaña nueva)"
-                data-i18n="link.site"
-                >Apri il sito ↗</a
-              >
-            </div>
-          </article>
+
           <article
             class="ProjectCard ProjectCard--uni"
             data-group="uni"
@@ -1252,36 +1309,6 @@
                 target="_blank"
                 rel="noopener noreferrer"
                 title="Abrir Maderna Animation (se abre en una pestaña nueva)"
-                data-i18n="link.site"
-                >Apri il sito ↗</a
-              >
-            </div>
-          </article>
-          <article
-            class="ProjectCard ProjectCard--uni"
-            data-group="uni"
-            data-cats="frontend"
-          >
-            <div class="ProjectCard-top">
-              <span class="ProjectCard-badge" data-i18n="badge.uni"
-                >Università</span
-              ><span class="ProjectCard-badge" data-i18n="badge.mobile"
-                >Anche mobile</span
-              >
-            </div>
-            <h4 class="ProjectCard-title">Mirabilia</h4>
-            <p class="ProjectCard-note" data-i18n="note.mirabilia">
-              Sito in JavaScript, pensato anche per mobile.
-            </p>
-            <div class="ProjectCard-tags">
-              <span>JavaScript</span><span>DOM</span>
-            </div>
-            <div class="ProjectCard-links">
-              <a
-                href="https://mirabiliamagazine.github.io/mirabilia/"
-                target="_blank"
-                rel="noopener noreferrer"
-                title="Abrir Mirabilia (se abre en una pestaña nueva)"
                 data-i18n="link.site"
                 >Apri il sito ↗</a
               >
