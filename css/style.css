@@ -1071,9 +1071,6 @@ h3 {
 .ProjectGrid-group:first-child {
   margin-top: 0;
 }
-.ProjectGrid-group--uni {
-  font-size: 1.25rem;
-}
 /* Vacíos */
 .ProjectGrid-group[hidden],
 .ProjectGrid-intro[hidden],
@@ -1112,11 +1109,7 @@ h3 {
 .ProjectCard[hidden] {
   display: none;
 }
-.ProjectCard--uni {
-  gap: 0.5rem;
-  padding: 1rem;
-  border-top-width: 2px;
-}
+
 .ProjectCard-top {
   display: flex;
   flex-flow: row wrap;
