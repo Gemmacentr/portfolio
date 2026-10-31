@@ -130,13 +130,13 @@
       "note.maderna":
         "Progettazione di una biblioteca in 3D, realizzata con Blender.",
       "note.mirabilia": "Sito in JavaScript, pensato anche per mobile.",
-      "link.site": "Apri il sito ↗",
-      "link.figma": "Vedi su Figma ↗",
-      "link.prototype": "Vedi il prototipo ↗",
+      "link.site": "Apri il sito →",
+      "link.figma": "Vedi su Figma →",
+      "link.prototype": "Vedi il prototipo →",
 
       "trek.altavia": "Dolomiti · 8 tappe",
       "trek.camino": "Rivista · InDesign",
-      "trek.link": "Sfoglia la rivista ↗",
+      "trek.link": "Sfoglia la rivista →",
 
       "contact.heading": "Parliamo del tuo prossimo progetto.",
       "contact.email_btn": "Scrivimi via email",
@@ -254,13 +254,13 @@
       "note.dataviz": "Data visualisation with data handled in Python.",
       "note.maderna": "Design of a 3D library, created in Blender.",
       "note.mirabilia": "A JavaScript site, built to work on mobile too.",
-      "link.site": "Open the site ↗",
-      "link.figma": "View on Figma ↗",
-      "link.prototype": "View the prototype ↗",
+      "link.site": "Open the site →",
+      "link.figma": "View on Figma →",
+      "link.prototype": "View the prototype →",
 
       "trek.altavia": "Dolomites · 8 stages",
       "trek.camino": "Magazine · InDesign",
-      "trek.link": "Browse the magazine ↗",
+      "trek.link": "Browse the magazine →",
 
       "contact.heading": "Let's talk about your next project.",
       "contact.email_btn": "Email me",
@@ -377,13 +377,13 @@
       "note.dataviz": "Visualización de datos gestionados con Python.",
       "note.maderna": "Diseño de una biblioteca en 3D, creado con Blender.",
       "note.mirabilia": "Sitio en JavaScript, pensado también para móvil.",
-      "link.site": "Abrir el sitio ↗",
-      "link.figma": "Ver en Figma ↗",
-      "link.prototype": "Ver el prototipo ↗",
+      "link.site": "Abrir el sitio →",
+      "link.figma": "Ver en Figma →",
+      "link.prototype": "Ver el prototipo →",
 
       "trek.altavia": "Dolomitas · 8 etapas",
       "trek.camino": "Revista · InDesign",
-      "trek.link": "Hojea la revista ↗",
+      "trek.link": "Hojea la revista →",
 
       "contact.heading": "Hablemos de tu próximo proyecto.",
       "contact.email_btn": "Escríbeme por email",

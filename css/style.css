@@ -26,7 +26,7 @@
   --color-bg: #f5f1e4;
   --ink: #17150f;
   --color-accent: #f2542d;
-  --color-overlay: rgb(23 21 15 / 85%);
+  --color-overlay: #17150fd9;
 
   /* Tamaños */
   --icon-size: 2.5rem;
@@ -657,7 +657,7 @@ h3 {
 }
 .Project-caption:hover .Project-arrow,
 .Project-caption:focus-visible .Project-arrow {
-  transform: rotate(45deg);
+  transform: rotate(-45deg);
 }
 /* Controles */
 .Project-controls {
