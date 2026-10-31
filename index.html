@@ -7,36 +7,49 @@
     <title>Gemma Centrone · Frontend Developer</title>
     <meta
       name="description"
-      content="Portfolio de Gemma Centrone, frontend developer en Madrid. Proyectos de diseño y desarrollo web con HTML, CSS y JavaScript."
+      content="Portfolio di Gemma Centrone, frontend developer. Progetti di design e sviluppo web con Vue 3, TypeScript, HTML, CSS e JavaScript."
     />
     <meta name="author" content="Gemma Centrone" />
     <meta name="theme-color" content="#17150f" />
-    <link rel="canonical" href="https://gemmacentr.github.io/portfolio/" />
+    <link rel="canonical" href="https://mynameisgemma.com/" />
+
+    <!-- ===== Favicon ===== -->
+    <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="./assets/apple-touch-icon.png" />
 
     <!-- ===== Open Graph (cómo se ve al compartir en redes) ===== -->
     <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Gemma Centrone" />
     <meta property="og:title" content="Gemma Centrone · Frontend Developer" />
     <meta
       property="og:description"
-      content="Proyectos de diseño y desarrollo web con HTML, CSS y JavaScript."
+      content="Progetti di design e sviluppo web con Vue 3, TypeScript, HTML, CSS e JavaScript."
     />
-    <meta property="og:url" content="https://gemmacentr.github.io/portfolio/" />
+    <meta property="og:url" content="https://mynameisgemma.com/" />
     <meta
       property="og:image"
-      content="https://gemmacentr.github.io/portfolio/assets/gemma-retrato.webp"
+      content="https://mynameisgemma.com/assets/og-image.jpg"
     />
-    <meta property="og:locale" content="es_ES" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="Home del portfolio di Gemma Centrone"
+    />
+    <meta property="og:locale" content="it_IT" />
+    <meta property="og:locale:alternate" content="en_GB" />
+    <meta property="og:locale:alternate" content="es_ES" />
 
     <!-- ===== Twitter / X ===== -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Gemma Centrone · Frontend Developer" />
     <meta
       name="twitter:description"
-      content="Proyectos de diseño y desarrollo web con HTML, CSS y JavaScript."
+      content="Progetti di design e sviluppo web con Vue 3, TypeScript, HTML, CSS e JavaScript."
     />
     <meta
       name="twitter:image"
-      content="https://gemmacentr.github.io/portfolio/assets/gemma-retrato.webp"
+      content="https://mynameisgemma.com/assets/og-image.jpg"
     />
 
     <!-- ===== Tipografías en local ===== -->
@@ -280,83 +293,89 @@
           aria-label="Proyectos destacados"
         >
           <div class="Project-slide isActive">
-            <picture class="Project-picture">
-              <source srcset="./assets/mamo.webp" type="image/webp" />
-              <img
-                class="Project-img"
-                src="./assets/mamo.jpg"
-                alt="Home de la web de MAMO"
-                width="1000"
-                height="510"
-                loading="lazy"
-              />
-            </picture>
             <a
-              class="Project-caption"
+              class="Project-link"
               href="https://gemmacentr.github.io/MAMO/"
               title="Ver la web de MAMO (se abre en una pestaña nueva)"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <span class="Project-role" data-i18n="role.mamo"
-                >Cliente · Design · Code</span
-              >
-              <span class="Project-title">MAMO</span>
-              <span class="Project-arrow" aria-hidden="true">→</span>
+              <picture class="Project-picture">
+                <source srcset="./assets/mamo.webp" type="image/webp" />
+                <img
+                  class="Project-img"
+                  src="./assets/mamo.jpg"
+                  alt="Home de la web de MAMO"
+                  width="1000"
+                  height="510"
+                  loading="lazy"
+                />
+              </picture>
+              <span class="Project-caption">
+                <span class="Project-role" data-i18n="role.mamo"
+                  >Cliente · Design · Code</span
+                >
+                <span class="Project-title">MAMO</span>
+                <span class="Project-arrow" aria-hidden="true">→</span>
+              </span>
             </a>
           </div>
 
           <div class="Project-slide">
-            <picture class="Project-picture">
-              <source srcset="./assets/kikeroo.webp" type="image/webp" />
-              <img
-                class="Project-img"
-                src="./assets/kikeroo.jpg"
-                alt="Home de la web de Kikeroo"
-                width="400"
-                height="291"
-                loading="lazy"
-              />
-            </picture>
             <a
-              class="Project-caption"
+              class="Project-link"
               href="https://kikeroo-three.vercel.app/home"
               title="Ver la web de Kikeroo (se abre en una pestaña nueva)"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <span class="Project-role" data-i18n="role.kikeroo"
-                >Prova tecnica · EJS · Leaflet</span
-              >
-              <span class="Project-title">Kikeroo</span>
-              <span class="Project-arrow" aria-hidden="true">→</span>
+              <picture class="Project-picture">
+                <source srcset="./assets/kikeroo.webp" type="image/webp" />
+                <img
+                  class="Project-img"
+                  src="./assets/kikeroo.jpg"
+                  alt="Home de la web de Kikeroo"
+                  width="400"
+                  height="291"
+                  loading="lazy"
+                />
+              </picture>
+              <span class="Project-caption">
+                <span class="Project-role" data-i18n="role.kikeroo"
+                  >Prova tecnica · EJS · Leaflet</span
+                >
+                <span class="Project-title">Kikeroo</span>
+                <span class="Project-arrow" aria-hidden="true">→</span>
+              </span>
             </a>
           </div>
 
           <div class="Project-slide">
-            <picture class="Project-picture">
-              <source srcset="./assets/mirabilia.webp" type="image/webp" />
-              <img
-                class="Project-img"
-                src="./assets/mirabilia.jpg"
-                alt="Portada de la revista web Mirabilia"
-                width="1200"
-                height="502"
-                loading="lazy"
-              />
-            </picture>
             <a
-              class="Project-caption"
+              class="Project-link"
               href="https://mirabiliamagazine.github.io/mirabilia/"
               title="Ver Mirabilia (se abre en una pestaña nueva)"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <span class="Project-role" data-i18n="role.mirabilia"
-                >Rivista web</span
-              >
-              <span class="Project-title">Mirabilia</span>
-              <span class="Project-arrow" aria-hidden="true">→</span>
+              <picture class="Project-picture">
+                <source srcset="./assets/mirabilia.webp" type="image/webp" />
+                <img
+                  class="Project-img"
+                  src="./assets/mirabilia.jpg"
+                  alt="Portada de la revista web Mirabilia"
+                  width="1200"
+                  height="502"
+                  loading="lazy"
+                />
+              </picture>
+              <span class="Project-caption">
+                <span class="Project-role" data-i18n="role.mirabilia"
+                  >Rivista web</span
+                >
+                <span class="Project-title">Mirabilia</span>
+                <span class="Project-arrow" aria-hidden="true">→</span>
+              </span>
             </a>
           </div>
 
