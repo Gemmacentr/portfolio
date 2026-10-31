@@ -285,9 +285,9 @@
       "cv.kicker": "Currículum",
       "cv.download": "Descarga mi CV",
       "about.title": "Hola, soy Gemma.",
-      "about.claim": "La IA escribe código. Yo sé qué hacer con él.",
+      "about.claim": "La IA escribe código. Yo sé usarlo.",
       "about.text":
-        "Frontend developer desde hace 5 años. Experiencia, visión y cuidado por los detalles.",
+        "Frontend developer desde hace 5 años. Experiencia, visión y detalle.",
       "passions.cta": "Fuera de la pantalla ↓",
       "role.mamo": "Cliente · Diseño · Código",
       "role.kikeroo": "Prueba técnica · EJS · Leaflet",
