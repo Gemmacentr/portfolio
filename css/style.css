@@ -114,7 +114,15 @@ h6,
 p,
 span,
 a,
-strong,
+strong {
+  font-size: inherit;
+  font-weight: inherit;
+  font-style: inherit;
+  font-family: inherit;
+  line-height: inherit;
+  text-decoration: none;
+  color: inherit;
+}
 blockquote,
 i,
 b,
@@ -177,10 +185,7 @@ svg {
   display: block;
   fill: currentColor;
 }
-/* El sprite de iconos (svg con hidden) no ocupa espacio */
-svg[hidden] {
-  display: none;
-}
+
 /* ===== 4. BASE: body sin scroll hasta que termina el loader ===== */
 body {
   min-height: 100vh;
@@ -526,7 +531,9 @@ h3 {
 .Contact-link:focus-visible .Contact-svg {
   animation-play-state: running;
 }
-
+.u-hidden {
+  display: none;
+}
 /* Celda de descarga del CV */
 .Cv {
   grid-column: 4/5;

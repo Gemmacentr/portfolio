@@ -1,30 +1,4 @@
 <!doctype html>
-<!--
-  ==========================================================================
-  PORTFOLIO · Gemma Centrone
-  Landing page de una sola página (index.html)
-
-  Estructura general:
-    1. head ........... metadatos, SEO, Open Graph, tipografías y estilos
-    2. Loader ......... pantalla de carga con contador y barra de progreso
-    3. Cursor ......... cursor personalizado (solo en dispositivos con ratón)
-    4. SiteContent .... contenedor de la web, aparece al terminar el loader
-         Header ....... logo + navegación principal
-         Main ......... contenido principal
-         Footer ....... pie de página
-
-  Metodología CSS: SUIT CSS
-    Componente ...... PascalCase            .Loader
-    Descendiente .... Componente-camelCase  .Loader-track
-    Modificador ..... Componente--camelCase .Button--primary
-    Estado .......... isCamelCase           .Loader.isHidden
-    Utilidad ........ u-camelCase           .u-visuallyHidden
-
-  Uso de IA: la estructura base de este archivo se generó con Claude (Anthropic)
-  a partir del prompt "base HTML semántica para un portfolio de una página
-  siguiendo la rúbrica del CEI". El contenido y los ajustes son propios.
-  ==========================================================================
--->
 <html lang="it">
   <head>
     <!-- ===== Metadatos básicos ===== -->
@@ -94,11 +68,37 @@
     <!-- ===== Scripts (defer: no bloquean el renderizado) ===== -->
     <script src="./js/main.js" defer></script>
     <script src="./js/translations.js" defer></script>
+    <!--
+  ==========================================================================
+  PORTFOLIO · Gemma Centrone
+  Landing page de una sola página (index.html)
+
+  Estructura general:
+    1. head ........... metadatos, SEO, Open Graph, tipografías y estilos
+    2. Loader ......... pantalla de carga con contador y barra de progreso
+    3. Cursor ......... cursor personalizado (solo en dispositivos con ratón)
+    4. SiteContent .... contenedor de la web, aparece al terminar el loader
+         Header ....... logo + navegación principal
+         Main ......... contenido principal
+         Footer ....... pie de página
+
+  Metodología CSS: SUIT CSS
+    Componente ...... PascalCase            .Loader
+    Descendiente .... Componente-camelCase  .Loader-track
+    Modificador ..... Componente + doble guion + camelCase
+    Estado .......... isCamelCase           .Loader.isHidden
+    Utilidad ........ u-camelCase           .u-visuallyHidden
+
+  Uso de IA: la estructura base de este archivo se generó con Claude (Anthropic)
+  a partir del prompt "base HTML semántica para un portfolio de una página
+  siguiendo la rúbrica del CEI". El contenido y los ajustes son propios.
+  ==========================================================================
+-->
   </head>
 
   <body>
     <!-- ===== SVG SPRITE: iconos reutilizables con <use> ===== -->
-    <svg hidden>
+    <svg class="u-hidden" aria-hidden="true">
       <!-- Onda de los enlaces de contacto -->
       <symbol id="icon-wave" viewBox="0 0 192 12">
         <path
